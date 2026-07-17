@@ -4,6 +4,7 @@
     "title": "Charming private suite in Fort Worth",
     "area": "Fort Worth",
     "propertyType": "Private suite",
+    "unitCategory": "private-suite",
     "privacy": "private-suite",
     "monthlyRent": 1000,
     "utilitiesMonthly": 0,
@@ -33,15 +34,31 @@
     "priority": "high",
     "nextAction": "Confirm exact location, private-space configuration, two-dog approval, pet fees and kitchen access.",
     "notes": "At the target budget with utilities included. It is promising only if the kitchen access is practical and both dogs are accepted.",
-    "verificationGaps": ["Exact address and commute", "Two small dogs", "Kitchen access", "Parking details", "Current availability"],
-    "tags": ["at budget", "utilities included", "host direct"],
-    "history": [{"date":"2026-07-16","note":"Added during initial expanded-radius search."}]
+    "verificationGaps": [
+      "Exact address and commute",
+      "Two small dogs",
+      "Kitchen access",
+      "Parking details",
+      "Current availability"
+    ],
+    "tags": [
+      "at budget",
+      "utilities included",
+      "host direct"
+    ],
+    "history": [
+      {
+        "date": "2026-07-16",
+        "note": "Added during initial expanded-radius search."
+      }
+    ]
   },
   {
     "id": "L-002",
     "title": "Dog-friendly private room and bath",
     "area": "Fort Worth",
     "propertyType": "Private room",
+    "unitCategory": "private-room",
     "privacy": "private-room",
     "monthlyRent": 800,
     "utilitiesMonthly": 0,
@@ -71,15 +88,28 @@
     "priority": "low",
     "nextAction": "Retain only as a future pricing benchmark.",
     "notes": "Excellent price but cannot solve the immediate July need.",
-    "verificationGaps": ["Two-dog limit", "Kitchen access"],
-    "tags": ["future option", "low cost", "pets"],
-    "history": [{"date":"2026-07-16","note":"Rejected for immediate need because availability begins in October."}]
+    "verificationGaps": [
+      "Two-dog limit",
+      "Kitchen access"
+    ],
+    "tags": [
+      "future option",
+      "low cost",
+      "pets"
+    ],
+    "history": [
+      {
+        "date": "2026-07-16",
+        "note": "Rejected for immediate need because availability begins in October."
+      }
+    ]
   },
   {
     "id": "L-003",
     "title": "Furnished duplex room rental",
     "area": "Fort Worth",
     "propertyType": "Private room in duplex",
+    "unitCategory": "private-room",
     "privacy": "private-room",
     "monthlyRent": 975,
     "utilitiesMonthly": 0,
@@ -109,15 +139,30 @@
     "priority": "medium",
     "nextAction": "Ask about both dogs, bathroom arrangement, exact address and practical kitchen access.",
     "notes": "Within budget, but shared bathroom and room-rental format reduce fit.",
-    "verificationGaps": ["Dogs", "Exact location", "Bathroom privacy", "Kitchen access"],
-    "tags": ["under budget", "shared home", "utilities included"],
-    "history": [{"date":"2026-07-16","note":"Added from Furnished Finder initial pass."}]
+    "verificationGaps": [
+      "Dogs",
+      "Exact location",
+      "Bathroom privacy",
+      "Kitchen access"
+    ],
+    "tags": [
+      "under budget",
+      "shared home",
+      "utilities included"
+    ],
+    "history": [
+      {
+        "date": "2026-07-16",
+        "note": "Added from Furnished Finder initial pass."
+      }
+    ]
   },
   {
     "id": "L-004",
     "title": "White Settlement furnished inventory",
     "area": "White Settlement / West Fort Worth",
     "propertyType": "Apartment inventory pool",
+    "unitCategory": "inventory-pool",
     "privacy": "inventory-pool",
     "monthlyRent": 1054,
     "utilitiesMonthly": null,
@@ -147,15 +192,31 @@
     "priority": "high",
     "nextAction": "Open each low-price unit, verify true furnished rate, short lease premium, dogs and utilities.",
     "notes": "The market lower edge appears close to the stretch budget. Individual unit costs may rise after utilities and pet charges.",
-    "verificationGaps": ["Specific unit", "All-in price", "Dogs", "Short-term lease", "Availability"],
-    "tags": ["full kitchen", "expanded radius", "inventory pool"],
-    "history": [{"date":"2026-07-16","note":"Established as a priority market pool after initial west-side search."}]
+    "verificationGaps": [
+      "Specific unit",
+      "All-in price",
+      "Dogs",
+      "Short-term lease",
+      "Availability"
+    ],
+    "tags": [
+      "full kitchen",
+      "expanded radius",
+      "inventory pool"
+    ],
+    "history": [
+      {
+        "date": "2026-07-16",
+        "note": "Established as a priority market pool after initial west-side search."
+      }
+    ]
   },
   {
     "id": "L-005",
     "title": "The Carmen",
     "area": "White Settlement / West Fort Worth",
     "propertyType": "Conventional apartment",
+    "unitCategory": "conventional-apartment",
     "privacy": "entire-unit",
     "monthlyRent": 778,
     "utilitiesMonthly": 180,
@@ -185,15 +246,31 @@
     "priority": "medium",
     "nextAction": "Request actual unit quote, lease terms, dogs, utilities and promotions; price a minimal furnishing package.",
     "notes": "A cheap conventional lease could outperform furnished inventory over several months, but furniture and lease-length risk must be included.",
-    "verificationGaps": ["Current unit", "Lease length", "Dogs", "Fees", "Furniture plan"],
-    "tags": ["entire unit", "full kitchen", "unfurnished plan B"],
-    "history": [{"date":"2026-07-16","note":"Added as a conventional-apartment fallback benchmark."}]
+    "verificationGaps": [
+      "Current unit",
+      "Lease length",
+      "Dogs",
+      "Fees",
+      "Furniture plan"
+    ],
+    "tags": [
+      "entire unit",
+      "full kitchen",
+      "unfurnished plan B"
+    ],
+    "history": [
+      {
+        "date": "2026-07-16",
+        "note": "Added as a conventional-apartment fallback benchmark."
+      }
+    ]
   },
   {
     "id": "L-006",
     "title": "The Celine",
     "area": "White Settlement / West Fort Worth",
     "propertyType": "Conventional apartment",
+    "unitCategory": "conventional-apartment",
     "privacy": "entire-unit",
     "monthlyRent": 854,
     "utilitiesMonthly": 180,
@@ -223,15 +300,31 @@
     "priority": "medium",
     "nextAction": "Verify advertised promotion, minimum lease, dog costs and total monthly fees.",
     "notes": "Potential concession could offset furnishing cost, but exact promotion terms are unverified.",
-    "verificationGaps": ["Promotion terms", "Lease length", "Dogs", "Fees", "Furnishing cost"],
-    "tags": ["entire unit", "promotion", "unfurnished plan B"],
-    "history": [{"date":"2026-07-16","note":"Added during conventional apartment comparison."}]
+    "verificationGaps": [
+      "Promotion terms",
+      "Lease length",
+      "Dogs",
+      "Fees",
+      "Furnishing cost"
+    ],
+    "tags": [
+      "entire unit",
+      "promotion",
+      "unfurnished plan B"
+    ],
+    "history": [
+      {
+        "date": "2026-07-16",
+        "note": "Added during conventional apartment comparison."
+      }
+    ]
   },
   {
     "id": "L-007",
     "title": "Monarch Pass",
     "area": "South / Southeast Fort Worth",
     "propertyType": "Conventional apartment",
+    "unitCategory": "conventional-apartment",
     "privacy": "entire-unit",
     "monthlyRent": 926,
     "utilitiesMonthly": 180,
@@ -261,15 +354,30 @@
     "priority": "medium",
     "nextAction": "Confirm short-lease options, all mandatory fees and dog costs.",
     "notes": "Near the stretch ceiling before furnishing, so this works only with favorable fees or a longer assignment.",
-    "verificationGaps": ["Lease length", "Dogs", "Fees", "Furnishing cost"],
-    "tags": ["entire unit", "full kitchen", "stretch budget"],
-    "history": [{"date":"2026-07-16","note":"Added as south-side plan B."}]
+    "verificationGaps": [
+      "Lease length",
+      "Dogs",
+      "Fees",
+      "Furnishing cost"
+    ],
+    "tags": [
+      "entire unit",
+      "full kitchen",
+      "stretch budget"
+    ],
+    "history": [
+      {
+        "date": "2026-07-16",
+        "note": "Added as south-side plan B."
+      }
+    ]
   },
   {
     "id": "L-008",
     "title": "Crowley furnished rental inventory",
     "area": "Crowley",
     "propertyType": "Furnished inventory pool",
+    "unitCategory": "inventory-pool",
     "privacy": "inventory-pool",
     "monthlyRent": 1100,
     "utilitiesMonthly": 0,
@@ -299,15 +407,31 @@
     "priority": "high",
     "nextAction": "Review every entire-unit and private-suite result, prioritizing confirmed dogs and kitchens.",
     "notes": "Expanded radius produces more inventory near the stretch ceiling. Room-only options should be deprioritized.",
-    "verificationGaps": ["Specific unit", "Kitchen", "Dogs", "Availability", "All-in cost"],
-    "tags": ["expanded radius", "utilities often included", "host direct"],
-    "history": [{"date":"2026-07-16","note":"Added as a priority search pool after broader radius approval."}]
+    "verificationGaps": [
+      "Specific unit",
+      "Kitchen",
+      "Dogs",
+      "Availability",
+      "All-in cost"
+    ],
+    "tags": [
+      "expanded radius",
+      "utilities often included",
+      "host direct"
+    ],
+    "history": [
+      {
+        "date": "2026-07-16",
+        "note": "Added as a priority search pool after broader radius approval."
+      }
+    ]
   },
   {
     "id": "L-009",
     "title": "Saginaw and Alliance furnished inventory",
     "area": "Saginaw / North Fort Worth",
     "propertyType": "Furnished inventory pool",
+    "unitCategory": "inventory-pool",
     "privacy": "inventory-pool",
     "monthlyRent": 1200,
     "utilitiesMonthly": 0,
@@ -337,8 +461,301 @@
     "priority": "medium",
     "nextAction": "Monitor new suites and entire units below $1,150; reject room-only leads without meaningful savings.",
     "notes": "Longer commute and limited inventory make this a secondary search area.",
-    "verificationGaps": ["Specific unit", "Kitchen", "Dogs", "All-in cost"],
-    "tags": ["north side", "limited inventory", "monitor"],
-    "history": [{"date":"2026-07-16","note":"Initial pass showed limited qualifying inventory."}]
+    "verificationGaps": [
+      "Specific unit",
+      "Kitchen",
+      "Dogs",
+      "All-in cost"
+    ],
+    "tags": [
+      "north side",
+      "limited inventory",
+      "monitor"
+    ],
+    "history": [
+      {
+        "date": "2026-07-16",
+        "note": "Initial pass showed limited qualifying inventory."
+      }
+    ]
+  },
+  {
+    "id": "L-010",
+    "title": "Cozy Ft. Worth Guest House!",
+    "area": "Fort Worth \u2014 exact neighborhood hidden",
+    "propertyType": "Detached private guest house",
+    "unitCategory": "guest-house",
+    "privacy": "entire-unit",
+    "monthlyRent": null,
+    "utilitiesMonthly": null,
+    "utilitiesIncluded": null,
+    "petCostMonthly": null,
+    "petDeposit": null,
+    "estimatedAllIn": null,
+    "kitchen": "full",
+    "kitchenDetails": "Private full kitchen reported in the listing.",
+    "furnished": true,
+    "petPolicy": "likely",
+    "petDetails": "Airbnb lists pets allowed and describes the guest house as pet friendly; confirm two small dogs and long-stay fees.",
+    "parking": "One designated covered parking space in a shared driveway.",
+    "minStay": "Monthly terms need verification",
+    "availability": "Exact dates and monthly price require a date-specific Airbnb search.",
+    "availableFrom": null,
+    "commuteMinutes": null,
+    "contactName": "Meryl",
+    "contactMethod": "Airbnb message",
+    "phone": "",
+    "email": "",
+    "sourceName": "Airbnb",
+    "sourceUrl": "https://www.airbnb.com/rooms/1008691216469900964",
+    "lastChecked": "2026-07-16",
+    "status": "investigate",
+    "confidence": "high",
+    "priority": "high",
+    "nextAction": "Enter assignment dates, verify monthly total, exact commute and approval for both dogs, then request a long-stay quote.",
+    "notes": "Top-priority housing format: private, fully furnished guest house with a full kitchen, small fenced side yard and covered parking. Price remains the deciding variable.",
+    "verificationGaps": [
+      "Exact monthly total",
+      "Date availability",
+      "Exact address and commute",
+      "Two-dog approval and fees",
+      "Long-stay terms"
+    ],
+    "tags": [
+      "entire guest house",
+      "full kitchen",
+      "pet friendly",
+      "fenced side yard",
+      "covered parking"
+    ],
+    "history": [
+      {
+        "date": "2026-07-16",
+        "note": "Added from current Airbnb guest-house research; structural fit is excellent, with price and exact dates still gated behind search inputs."
+      }
+    ]
+  },
+  {
+    "id": "L-011",
+    "title": "Walk to TCU | Monthly Stay | Sleeps 2",
+    "area": "TCU / Medical District",
+    "propertyType": "Private one-bedroom guest house",
+    "unitCategory": "guest-house",
+    "privacy": "entire-unit",
+    "monthlyRent": null,
+    "utilitiesMonthly": null,
+    "utilitiesIncluded": null,
+    "petCostMonthly": null,
+    "petDeposit": null,
+    "estimatedAllIn": null,
+    "kitchen": "full",
+    "kitchenDetails": "Fully equipped private kitchen with full-size appliances.",
+    "furnished": true,
+    "petPolicy": "unknown",
+    "petDetails": "No pet allowance was visible in the accessible listing details; ask specifically about two small dogs.",
+    "parking": "Free parking on premises; private-gate access described.",
+    "minStay": "30+ days",
+    "availability": "Exact dates and monthly price require a date-specific Airbnb search.",
+    "availableFrom": null,
+    "commuteMinutes": 10,
+    "contactName": "Mike",
+    "contactMethod": "Airbnb message",
+    "phone": "",
+    "email": "",
+    "sourceName": "Airbnb",
+    "sourceUrl": "https://www.airbnb.com/rooms/1663306444984738431",
+    "lastChecked": "2026-07-16",
+    "status": "investigate",
+    "confidence": "high",
+    "priority": "high",
+    "nextAction": "Check exact assignment dates and monthly total, then ask whether two small dogs are accepted and what fees apply.",
+    "notes": "Purpose-built for 30+ day stays and explicitly advertises an approximately 10-minute trip to Baylor All Saints. Pet acceptance and price are unresolved.",
+    "verificationGaps": [
+      "Exact monthly total",
+      "Date availability",
+      "Two-dog approval and fees",
+      "Utilities and cleaning fees",
+      "Verify commute from exact address"
+    ],
+    "tags": [
+      "entire guest house",
+      "30+ days",
+      "full kitchen",
+      "medical district",
+      "close commute"
+    ],
+    "history": [
+      {
+        "date": "2026-07-16",
+        "note": "Added from current Airbnb search; listing specifically targets traveling professionals and 30+ day stays."
+      }
+    ]
+  },
+  {
+    "id": "L-012",
+    "title": "Rosy's Guest House",
+    "area": "Historic Fort Worth neighborhood \u2014 exact location hidden",
+    "propertyType": "Private studio guest house",
+    "unitCategory": "guest-house",
+    "privacy": "entire-unit",
+    "monthlyRent": null,
+    "utilitiesMonthly": null,
+    "utilitiesIncluded": null,
+    "petCostMonthly": null,
+    "petDeposit": null,
+    "estimatedAllIn": null,
+    "kitchen": "full",
+    "kitchenDetails": "Full kitchen with stove, oven, microwave and full-size refrigerator.",
+    "furnished": true,
+    "petPolicy": "likely",
+    "petDetails": "Listing describes the studio as pet friendly; confirm two small dogs, fee structure and any yard-sharing constraints.",
+    "parking": "Parking arrangement needs verification.",
+    "minStay": "Monthly terms need verification",
+    "availability": "Exact dates and monthly price require a date-specific Airbnb search.",
+    "availableFrom": null,
+    "commuteMinutes": null,
+    "contactName": "Kimberly",
+    "contactMethod": "Airbnb message",
+    "phone": "",
+    "email": "",
+    "sourceName": "Airbnb",
+    "sourceUrl": "https://www.airbnb.com/rooms/299748",
+    "lastChecked": "2026-07-16",
+    "status": "investigate",
+    "confidence": "high",
+    "priority": "high",
+    "nextAction": "Price the exact assignment dates and confirm two-dog acceptance, parking, commute and extended-stay discount.",
+    "notes": "Highly reviewed private studio guest house with a real kitchen and pet-friendly positioning. Exact location and long-stay economics remain unknown.",
+    "verificationGaps": [
+      "Exact monthly total",
+      "Date availability",
+      "Exact address and commute",
+      "Two-dog approval and fees",
+      "Parking",
+      "Long-stay terms"
+    ],
+    "tags": [
+      "entire guest house",
+      "studio",
+      "full kitchen",
+      "pet friendly",
+      "highly reviewed"
+    ],
+    "history": [
+      {
+        "date": "2026-07-16",
+        "note": "Added from current Airbnb guest-house research; strong structural match, pending cost and date verification."
+      }
+    ]
+  },
+  {
+    "id": "L-013",
+    "title": "The Cozy Back Yard Nook",
+    "area": "Fort Worth \u2014 near TCU / Cultural District attractions",
+    "propertyType": "Private back-house guest unit",
+    "unitCategory": "guest-house",
+    "privacy": "entire-unit",
+    "monthlyRent": null,
+    "utilitiesMonthly": null,
+    "utilitiesIncluded": null,
+    "petCostMonthly": null,
+    "petDeposit": null,
+    "estimatedAllIn": null,
+    "kitchen": "full",
+    "kitchenDetails": "Fully equipped private kitchen with dishwasher and essentials.",
+    "furnished": true,
+    "petPolicy": "confirmed",
+    "petDetails": "Up to two pets under 50 pounds are permitted. Listing states a $40 cleaning fee per pet and asks guests to contact the host before booking; verify any additional long-stay pet fee.",
+    "parking": "Street parking only with access through the back gate.",
+    "minStay": "Host requests direct inquiry for stays over two weeks",
+    "availability": "Exact dates and monthly price require a date-specific Airbnb search.",
+    "availableFrom": null,
+    "commuteMinutes": null,
+    "contactName": "Emily",
+    "contactMethod": "Airbnb message",
+    "phone": "",
+    "email": "",
+    "sourceName": "Airbnb",
+    "sourceUrl": "https://www.airbnb.com/rooms/36122465",
+    "lastChecked": "2026-07-16",
+    "status": "investigate",
+    "confidence": "high",
+    "priority": "high",
+    "nextAction": "Send exact dates and request a 30-day quote, confirming all pet, cleaning and occupancy fees plus the Baylor commute.",
+    "notes": "Best-verified two-dog policy among the new guest-house leads. The unknown monthly total and exact hospital commute are the remaining gating factors.",
+    "verificationGaps": [
+      "Exact monthly total",
+      "Date availability",
+      "Exact address and commute",
+      "Long-stay discount and fees"
+    ],
+    "tags": [
+      "entire guest house",
+      "full kitchen",
+      "two pets allowed",
+      "under 50 lb",
+      "street parking"
+    ],
+    "history": [
+      {
+        "date": "2026-07-16",
+        "note": "Added from current Airbnb research; listing explicitly permits two pets under 50 pounds and provides a full kitchen."
+      }
+    ]
+  },
+  {
+    "id": "L-014",
+    "title": "Historic near TCU/Downtown \u2014 30+ day rental only",
+    "area": "TCU / Medical District",
+    "propertyType": "Detached 600-square-foot guest house",
+    "unitCategory": "guest-house",
+    "privacy": "entire-unit",
+    "monthlyRent": 1500,
+    "utilitiesMonthly": 0,
+    "utilitiesIncluded": true,
+    "petCostMonthly": null,
+    "petDeposit": null,
+    "estimatedAllIn": 1500,
+    "kitchen": "kitchenette",
+    "kitchenDetails": "Mini-kitchen with sink, refrigerator, microwave and 20-inch gas range.",
+    "furnished": true,
+    "petPolicy": "unknown",
+    "petDetails": "Pet policy was not visible in the accessible listing details.",
+    "parking": "Secure gated parking reported.",
+    "minStay": "30+ days",
+    "availability": "Current date availability must be checked; descriptive availability text appears stale.",
+    "availableFrom": null,
+    "commuteMinutes": null,
+    "contactName": "Christopher",
+    "contactMethod": "Airbnb message",
+    "phone": "",
+    "email": "",
+    "sourceName": "Airbnb",
+    "sourceUrl": "https://www.airbnb.com/rooms/11926390",
+    "lastChecked": "2026-07-16",
+    "status": "market-benchmark",
+    "confidence": "medium",
+    "priority": "low",
+    "nextAction": "Retain as a close-in guest-house benchmark; revisit only if the host offers a substantial monthly concession and accepts both dogs.",
+    "notes": "Excellent format and location but the advertised $1,500 monthly figure is well above the stretch ceiling. The listing description also contains old availability language, so current terms require direct verification.",
+    "verificationGaps": [
+      "Current monthly total",
+      "Current availability",
+      "Two-dog policy",
+      "Exact commute"
+    ],
+    "tags": [
+      "entire guest house",
+      "30+ days",
+      "kitchenette",
+      "utilities included",
+      "over budget benchmark"
+    ],
+    "history": [
+      {
+        "date": "2026-07-16",
+        "note": "Added as a market benchmark, not a current budget-qualified lead."
+      }
+    ]
   }
 ]

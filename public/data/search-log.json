@@ -1,5 +1,17 @@
 [
   {
+    "id": "S-004",
+    "searchedAt": "2026-07-16T21:32:00-05:00",
+    "area": "Medical District / TCU / citywide guest houses",
+    "platform": "Airbnb + Furnished Finder",
+    "query": "Private furnished guest houses and monthly stays with kitchen and two-small-dog potential",
+    "reviewed": 14,
+    "qualified": 5,
+    "outcome": "Found four structurally strong private guest houses and one close-in market benchmark. Exact assignment-date prices remain hidden until dates are entered; Benbrook Furnished Finder whole-home inventory was far above target.",
+    "nextSearch": "Run exact-date price checks, confirm two-dog terms, and deepen owner-direct searches in Benbrook, Hulen, Lake Worth and River Oaks.",
+    "agent": "ChatGPT"
+  },
+  {
     "id": "S-003",
     "searchedAt": "2026-07-16T20:35:00-05:00",
     "area": "Crowley / Saginaw",
@@ -7,7 +19,7 @@
     "query": "Monthly furnished inventory with dogs and kitchen access",
     "reviewed": 15,
     "qualified": 2,
-    "outcome": "Crowley has several leads near $1,100–$1,200; Saginaw inventory is thinner and mostly room-oriented.",
+    "outcome": "Crowley has several leads near $1,100\u2013$1,200; Saginaw inventory is thinner and mostly room-oriented.",
     "nextSearch": "Open each Crowley suite and entire-unit listing; monitor Saginaw selectively.",
     "agent": "ChatGPT"
   },
@@ -28,7 +40,7 @@
     "searchedAt": "2026-07-16T20:15:00-05:00",
     "area": "Citywide and expanded radius",
     "platform": "Multi-platform web search",
-    "query": "Furnished, dog-friendly, kitchen, approximately $1,000–$1,200, within 40 minutes",
+    "query": "Furnished, dog-friendly, kitchen, approximately $1,000\u2013$1,200, within 40 minutes",
     "reviewed": 20,
     "qualified": 9,
     "outcome": "Most sub-$1,000 furnished results are private rooms. Entire units and suites require owner-direct negotiation or a modest stretch.",

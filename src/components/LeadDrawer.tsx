@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { Lead, LeadStatus, UserLeadState } from '../types'
-import { calculateLeadScore, formatMoney, scoreGrade } from '../lib/scoring'
+import { assessLead, fitLabel, formatMoney, unitCategoryLabel } from '../lib/scoring'
 import { createIssueUrl } from '../lib/github'
 import { Icon } from './Icon'
 
@@ -11,40 +11,56 @@ interface Props {
   onUpdate: (leadId: string, patch: UserLeadState) => void
 }
 
-const statuses: LeadStatus[] = ['new', 'investigate', 'contacted', 'awaiting-reply', 'tour-verify', 'shortlist', 'rejected', 'plan-b']
+const statuses: LeadStatus[] = ['new', 'investigate', 'contacted', 'awaiting-reply', 'tour-verify', 'shortlist', 'rejected', 'plan-b', 'market-benchmark', 'search-pool']
 
 export function LeadDrawer({ lead, state, onClose, onUpdate }: Props) {
   const [note, setNote] = useState('')
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const previousFocusRef = useRef<HTMLElement | null>(null)
+
   useEffect(() => setNote(state?.note ?? ''), [lead?.id, state?.note])
   useEffect(() => {
     if (!lead) return
+    previousFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    closeButtonRef.current?.focus()
     const handler = (event: KeyboardEvent) => event.key === 'Escape' && onClose()
     document.addEventListener('keydown', handler)
-    return () => document.removeEventListener('keydown', handler)
+    return () => {
+      document.removeEventListener('keydown', handler)
+      document.body.style.overflow = previousOverflow
+      previousFocusRef.current?.focus()
+    }
   }, [lead, onClose])
 
   if (!lead) return null
   const merged = { ...lead, status: state?.status ?? lead.status }
-  const score = calculateLeadScore(merged)
-  const grade = scoreGrade(score)
+  const assessment = assessLead(merged)
 
   return (
     <div className="drawer-backdrop" onMouseDown={onClose}>
-      <aside className="drawer" role="dialog" aria-modal="true" aria-labelledby="lead-title" onMouseDown={(event) => event.stopPropagation()}>
+      <aside className="drawer" role="dialog" aria-modal="true" aria-labelledby="lead-title" aria-describedby="lead-summary" onMouseDown={(event) => event.stopPropagation()}>
         <div className="drawer-header">
-          <div className={`grade grade-${grade.replace('+', 'plus').toLowerCase()}`}>{grade}</div>
+          <div className={`grade grade-${assessment.grade.replace('+', 'plus').toLowerCase()}`}>{assessment.grade}</div>
           <div>
-            <span className="eyebrow">{lead.id} · Score {score}/100</span>
+            <span className="eyebrow">{lead.id} · Score {assessment.score}/100</span>
             <h2 id="lead-title">{lead.title}</h2>
-            <p>{lead.area} · {lead.propertyType}</p>
+            <p id="lead-summary">{lead.area} · {unitCategoryLabel(lead.unitCategory)}</p>
           </div>
-          <button className="icon-button" onClick={onClose} aria-label="Close details"><Icon name="close" /></button>
+          <button ref={closeButtonRef} className="icon-button" onClick={onClose} aria-label="Close details"><Icon name="close" /></button>
+        </div>
+
+        <div className="drawer-fit-row">
+          <span className={`fit-badge fit-${assessment.fit}`}>{fitLabel(assessment.fit)}</span>
+          <span>{lead.confidence} research confidence</span>
+          <span>Checked {new Date(`${lead.lastChecked}T12:00:00`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
         </div>
 
         <div className="drawer-price-row">
           <div><span>Estimated all-in</span><strong>{formatMoney(lead.estimatedAllIn ?? lead.monthlyRent)}</strong></div>
           <div><span>Base rent</span><strong>{formatMoney(lead.monthlyRent)}</strong></div>
-          <div><span>Commute</span><strong>{lead.commuteMinutes ? `~${lead.commuteMinutes} min` : 'TBD'}</strong></div>
+          <div><span>Commute</span><strong>{lead.commuteMinutes !== null ? `~${lead.commuteMinutes} min` : 'TBD'}</strong></div>
         </div>
 
         <section className="detail-grid">
@@ -55,6 +71,26 @@ export function LeadDrawer({ lead, state, onClose, onUpdate }: Props) {
           <Detail icon="clock" label="Minimum stay" value={lead.minStay} />
           <Detail icon="activity" label="Availability" value={lead.availability} />
         </section>
+
+        <section className="drawer-section">
+          <h3>Decision score</h3>
+          <div className="score-breakdown">
+            {assessment.breakdown.map((component) => (
+              <div className="score-line" key={component.key}>
+                <div><strong>{component.label}</strong><span>{component.detail}</span></div>
+                <div className="score-points"><strong>{component.points}</strong><span>/{component.maxPoints}</span></div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {(assessment.hardRequirementFailures.length > 0 || assessment.verificationWarnings.length > 0) && (
+          <section className="drawer-section requirement-panel">
+            <h3><Icon name={assessment.hardRequirementFailures.length ? 'warning' : 'check'} /> Requirement readiness</h3>
+            {assessment.hardRequirementFailures.length > 0 && <div className="requirement-group"><strong>Conflicts</strong><ul>{assessment.hardRequirementFailures.map((item) => <li key={item}>{item}</li>)}</ul></div>}
+            {assessment.verificationWarnings.length > 0 && <div className="requirement-group"><strong>Verify</strong><ul>{assessment.verificationWarnings.map((item) => <li key={item}>{item}</li>)}</ul></div>}
+          </section>
+        )}
 
         <section className="drawer-section">
           <h3>Cost detail</h3>
@@ -68,14 +104,14 @@ export function LeadDrawer({ lead, state, onClose, onUpdate }: Props) {
 
         {lead.verificationGaps.length > 0 && (
           <section className="drawer-section warning-panel">
-            <h3><Icon name="warning" /> Verification needed</h3>
+            <h3><Icon name="warning" /> Listing questions</h3>
             <ul>{lead.verificationGaps.map((gap) => <li key={gap}>{gap}</li>)}</ul>
           </section>
         )}
 
         <section className="drawer-section">
           <h3>Research notes</h3>
-          <p className="body-copy">{lead.notes}</p>
+          <p className="body-copy">{lead.notes || 'No research notes recorded.'}</p>
           <p className="next-action"><strong>Next action:</strong> {lead.nextAction}</p>
         </section>
 
@@ -113,7 +149,7 @@ export function LeadDrawer({ lead, state, onClose, onUpdate }: Props) {
 
         <section className="drawer-section history">
           <h3>Lead history</h3>
-          {lead.history.map((item) => <div key={`${item.date}-${item.note}`}><time>{item.date}</time><p>{item.note}</p></div>)}
+          {lead.history.length ? lead.history.map((item) => <div key={`${item.date}-${item.note}`}><time>{item.date}</time><p>{item.note}</p></div>) : <p className="body-copy">No lead history recorded.</p>}
         </section>
       </aside>
     </div>

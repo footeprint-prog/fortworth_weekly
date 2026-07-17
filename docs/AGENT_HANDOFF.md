@@ -1,22 +1,35 @@
-# Agent handoff: Fort Worth weekly housing
+# Agent handoff: Fort Worth premium housing locator
 
 ## Mission
 
-Find a practical furnished home base for weekly Baylor Scott & White All Saints contract stays, centered on approximately **$1,000 monthly all-in** with a stretch ceiling near **$1,150**.
+Find the highest-value furnished home base near Baylor Scott & White All Saints Medical Center, centered on approximately **$1,000 monthly all-in** with a stretch ceiling near **$1,150** for exceptional value.
 
 ## Hard requirements
 
-- At least a genuine kitchenette or full kitchen. A microwave-only room does not qualify.
+- At least a private kitchenette or full kitchen. Shared kitchens do not qualify as requirement-ready.
 - Two small dogs must be accepted.
-- Furnished is strongly preferred. Conventional unfurnished apartments may be retained only as a clearly labeled Plan B with furnishing costs included.
+- Furnished is required for primary candidates. Conventional unfurnished apartments may be retained only as clearly labeled Plan B options with furnishing costs included.
+
+## Housing priority order
+
+1. Entire guest house
+2. Mother-in-law suite
+3. Garage apartment
+4. Furnished studio
+5. One-bedroom apartment
+6. Travel nurse housing
+7. Corporate housing
+8. Exceptional private suite or room
+
+Record the normalized priority in `unitCategory` rather than relying on free-text property descriptions.
 
 ## Search guidance
 
-- Do not require special long-term parking. Record available parking details only.
-- Do not filter for explicit two-adult language. Flag only unusual occupancy restrictions.
+- Record parking but do not use it as a hard filter.
 - Search up to roughly 40 minutes from 1400 8th Ave, Fort Worth.
-- Prioritize entire guest houses, ADUs, garage apartments, furnished studios, one-bedrooms, and private suites before private rooms.
-- Always calculate the likely all-in monthly cost. Headline rent alone is insufficient.
+- Always calculate likely all-in monthly cost; headline rent alone is insufficient.
+- Preserve rejected leads when they teach something useful, with a dated reason.
+- Separate specific listings from inventory/search pools.
 
 ## Current research priorities
 
@@ -34,16 +47,16 @@ Find a practical furnished home base for weekly Baylor Scott & White All Saints 
 1. Add or update a lead in `public/data/leads.json`.
 2. Append a search pass to `public/data/search-log.json`.
 3. Update the relevant row in `public/data/area-coverage.json`.
-4. Preserve rejected leads when they teach something useful; mark them `rejected` and record the reason.
+4. Preserve stable IDs and append history when facts change.
 5. Run `npm run check` before publishing.
 6. Use GitHub issues for contact outcomes, pursue decisions, and agent-to-agent questions.
 
-## Verification checklist for each promising lead
+## Verification checklist
 
 - Current availability and move-in date
 - Total monthly rent after utilities and mandatory fees
 - Pet approval for two small dogs, including deposits and recurring rent
-- Real kitchen or kitchenette details
+- Private full kitchen or kitchenette details
 - Furnishings included
 - Minimum stay and termination terms
 - Approximate typical commute
@@ -51,4 +64,13 @@ Find a practical furnished home base for weekly Baylor Scott & White All Saints 
 
 ## Search cadence
 
-The associated ChatGPT rental watch runs three times daily at approximately 8:00 a.m., 1:00 p.m., and 6:00 p.m. Central through July 21, 2026. Material findings should be reflected in this repository during active working sessions.
+The rental watch runs three times daily at approximately 8:00 a.m., 1:00 p.m., and 6:00 p.m. Central. Material findings should be reflected in this repository during active working sessions.
+
+## July 16, 2026 initialization update
+
+- The dashboard now uses normalized housing categories and an explainable, hard-requirement-aware scoring model.
+- Runtime validation protects the application from malformed research JSON.
+- Filters distinguish specific listings, requirement-ready leads, fallback inventory, and research pools.
+- Operations reporting now exposes coverage gaps and current search metrics.
+- Five current Airbnb guest-house records were added as `L-010` through `L-014`; exact date pricing and dog verification remain explicit next actions.
+- The GitHub repository is readable but the connected integration returns HTTP 403 for every write operation. See `docs/GITHUB_CONNECTION_BLOCKER.md` and use the prepared Git bundle or source ZIP until the integration is reinstalled with write access.

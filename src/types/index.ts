@@ -15,6 +15,20 @@ export type KitchenLevel = 'full' | 'kitchenette' | 'shared' | 'unknown' | 'none
 export type PetPolicy = 'confirmed' | 'likely' | 'unknown' | 'not-allowed'
 export type UnitPrivacy = 'entire-unit' | 'private-suite' | 'private-room' | 'shared-room' | 'inventory-pool'
 
+export type UnitCategory =
+  | 'guest-house'
+  | 'mother-in-law-suite'
+  | 'garage-apartment'
+  | 'furnished-studio'
+  | 'one-bedroom'
+  | 'travel-nurse-housing'
+  | 'corporate-housing'
+  | 'private-suite'
+  | 'private-room'
+  | 'conventional-apartment'
+  | 'inventory-pool'
+  | 'other'
+
 export interface LeadHistoryItem {
   date: string
   note: string
@@ -25,6 +39,7 @@ export interface Lead {
   title: string
   area: string
   propertyType: string
+  unitCategory: UnitCategory
   privacy: UnitPrivacy
   monthlyRent: number | null
   utilitiesMonthly: number | null

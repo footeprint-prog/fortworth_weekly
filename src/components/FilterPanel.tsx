@@ -1,6 +1,7 @@
-import type { Lead, LeadStatus, PetPolicy, UnitPrivacy } from '../types'
+import type { Lead, LeadStatus, PetPolicy, UnitCategory, UnitPrivacy } from '../types'
 import type { LeadFilters, SortKey } from '../lib/filters'
 import { defaultFilters } from '../lib/filters'
+import { unitCategoryLabel } from '../lib/scoring'
 import { Icon } from './Icon'
 
 interface Props {
@@ -13,19 +14,20 @@ interface Props {
   onMobileClose: () => void
 }
 
-const statusOptions: LeadStatus[] = ['new', 'investigate', 'contacted', 'awaiting-reply', 'tour-verify', 'shortlist', 'rejected', 'plan-b']
-const privacyOptions: UnitPrivacy[] = ['entire-unit', 'private-suite', 'private-room', 'inventory-pool']
+const statusOptions: LeadStatus[] = ['new', 'investigate', 'contacted', 'awaiting-reply', 'tour-verify', 'shortlist', 'rejected', 'plan-b', 'market-benchmark', 'search-pool']
+const privacyOptions: UnitPrivacy[] = ['entire-unit', 'private-suite', 'private-room', 'shared-room', 'inventory-pool']
 const petOptions: PetPolicy[] = ['confirmed', 'likely', 'unknown', 'not-allowed']
 
 export function FilterPanel({ leads, filters, sort, onFilters, onSort, mobileOpen, onMobileClose }: Props) {
   const areas = [...new Set(leads.map((lead) => lead.area))].sort()
-  const toggle = <T extends string>(key: 'areas' | 'statuses' | 'privacy' | 'petPolicies', value: T) => {
+  const categories = [...new Set(leads.map((lead) => lead.unitCategory))].sort((a, b) => unitCategoryLabel(a).localeCompare(unitCategoryLabel(b)))
+  const toggle = <T extends string>(key: 'areas' | 'statuses' | 'categories' | 'privacy' | 'petPolicies', value: T) => {
     const current = filters[key] as T[]
     onFilters({ ...filters, [key]: current.includes(value) ? current.filter((item) => item !== value) : [...current, value] })
   }
 
   return (
-    <aside className={`filters-panel ${mobileOpen ? 'mobile-open' : ''}`}>
+    <aside className={`filters-panel ${mobileOpen ? 'mobile-open' : ''}`} aria-label="Lead filters">
       <div className="filter-header">
         <div><Icon name="filter" /><h2>Filters</h2></div>
         <button className="icon-button mobile-only" onClick={onMobileClose} aria-label="Close filters"><Icon name="close" /></button>
@@ -44,7 +46,12 @@ export function FilterPanel({ leads, filters, sort, onFilters, onSort, mobileOpe
       <FilterGroup title="Essentials">
         <Check label="Real kitchen/kitchenette" checked={filters.kitchensOnly} onChange={() => onFilters({ ...filters, kitchensOnly: !filters.kitchensOnly })} />
         <Check label="Furnished only" checked={filters.furnishedOnly} onChange={() => onFilters({ ...filters, furnishedOnly: !filters.furnishedOnly })} />
+        <Check label="Requirement-ready only" checked={filters.requirementReadyOnly} onChange={() => onFilters({ ...filters, requirementReadyOnly: !filters.requirementReadyOnly })} />
+        <Check label="Specific listings only" checked={filters.specificListingsOnly} onChange={() => onFilters({ ...filters, specificListingsOnly: !filters.specificListingsOnly })} />
         <Check label="Shortlisted only" checked={filters.favoritesOnly} onChange={() => onFilters({ ...filters, favoritesOnly: !filters.favoritesOnly })} />
+      </FilterGroup>
+      <FilterGroup title="Housing type">
+        {categories.map((category: UnitCategory) => <Check key={category} label={unitCategoryLabel(category)} checked={filters.categories.includes(category)} onChange={() => toggle('categories', category)} />)}
       </FilterGroup>
       <FilterGroup title="Dog policy">
         {petOptions.map((option) => <Check key={option} label={option.replaceAll('-', ' ')} checked={filters.petPolicies.includes(option)} onChange={() => toggle('petPolicies', option)} />)}
@@ -58,7 +65,7 @@ export function FilterPanel({ leads, filters, sort, onFilters, onSort, mobileOpe
       <FilterGroup title="Area">
         {areas.map((area) => <Check key={area} label={area} checked={filters.areas.includes(area)} onChange={() => toggle('areas', area)} />)}
       </FilterGroup>
-      <button className="text-button reset" onClick={() => onFilters(defaultFilters)}>Reset all filters</button>
+      <button className="text-button reset" onClick={() => onFilters({ ...defaultFilters })}>Reset all filters</button>
     </aside>
   )
 }

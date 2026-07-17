@@ -1,16 +1,19 @@
-# Fort Worth Weekly Housing Dashboard
+# Fort Worth Premium Housing Locator
 
-A focused rental-research dashboard for tracking furnished, dog-friendly housing within commuting range of Baylor Scott & White All Saints in Fort Worth.
+A production-oriented decision-support dashboard for finding furnished, dog-friendly housing near Baylor Scott & White All Saints Medical Center in Fort Worth.
 
-## What it does
+## Product capabilities
 
-- Ranks leads using budget, kitchen, dogs, furnishing, privacy, commute, and verification confidence
-- Shows unit details at a glance and in a full decision drawer
-- Filters by price, area, privacy, status, pet policy, kitchen, furnishing, and shortlist
+- Ranks specific listings and research pools with an explainable 100-point score
+- Enforces the real operating requirements: private kitchenette/full kitchen, furnished, and approval for two small dogs
+- Prioritizes guest houses, mother-in-law suites, garage apartments, furnished studios, and one-bedrooms
+- Separates requirement-ready leads, promising leads, research leads, disqualified options, and unfurnished Plan B inventory
+- Filters by price, area, housing type, privacy, status, pet policy, furnishings, and shortlist
 - Saves shortlist, notes, and status decisions locally in the browser
-- Exports and imports portable decision backups
+- Imports and exports portable decision backups
 - Opens prefilled GitHub issues for pursuing or verifying a lead
-- Displays search coverage and an auditable research log
+- Displays area coverage, unresolved search gaps, and an auditable research log
+- Validates version-controlled JSON at runtime before rendering it
 
 ## Local development
 
@@ -31,12 +34,17 @@ This runs linting, unit tests, TypeScript compilation, and a production build.
 
 ## Updating research data
 
-Edit the JSON files in `public/data/`. See [the data schema](docs/DATA_SCHEMA.md) and [agent handoff brief](docs/AGENT_HANDOFF.md).
+Edit the JSON files in `public/data/`. See:
+
+- [Data schema](docs/DATA_SCHEMA.md)
+- [Agent handoff](docs/AGENT_HANDOFF.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Roadmap](docs/ROADMAP.md)
 
 ## Deployment
 
-The included GitHub Actions workflow verifies the application and deploys the production build to GitHub Pages on every push to `main`. In repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions** if it is not already selected.
+The included GitHub Actions workflow verifies the application and deploys `dist/` to GitHub Pages on every push to `main`. In repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**.
 
-The expected dashboard URL is:
+Expected dashboard URL:
 
 `https://footeprint-prog.github.io/fortworth_weekly/`

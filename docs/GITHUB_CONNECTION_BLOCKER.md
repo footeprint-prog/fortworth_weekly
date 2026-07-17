@@ -1,22 +1,31 @@
-# GitHub publication blocker
+# GitHub integration status
 
-The project was built and verified locally, but the connected GitHub tool reported no installed GitHub App accounts and returned HTTP 403 for both repository-content and issue writes.
+## Current status: repository is readable, write operations are blocked
 
-## Required connection
+On July 16, 2026, the connected GitHub account resolved as `footeprint-prog`, and the repository metadata for `footeprint-prog/fortworth_weekly` reported administrative and push permissions. However, every attempted mutation returned HTTP 403 with `Resource not accessible by integration`, including:
 
-Grant the ChatGPT/OpenAI GitHub app access to the `footeprint-prog/fortworth_weekly` repository with repository contents and issues write access. After the repository is connected, the prepared project can be published directly.
+- Contents API file creation
+- Git Data API blob creation
+- Issue creation
 
-## Manual publication fallback
+The connector also returned no active GitHub App installations. This means the repository can be discovered through the connected account, but the integration is not currently installed with usable write permissions for repository contents or issues.
 
-From the project folder:
+## Recovery artifacts
 
-```bash
-git init
-git branch -M main
-git add .
-git commit -m "Launch Fort Worth housing dashboard"
-git remote add origin https://github.com/footeprint-prog/fortworth_weekly.git
-git push -u origin main
-```
+The current project is preserved as:
 
-Then open repository **Settings → Pages** and select **GitHub Actions** as the deployment source if required. The included workflow runs all checks and deploys the site.
+- a clean source ZIP
+- a Git bundle with coherent local commit history
+- a repository ZIP containing the local `.git` history
+
+No code or research work depends on the remote repository being writable.
+
+## Required GitHub fix
+
+Reconnect or install the ChatGPT/OpenAI GitHub integration for `footeprint-prog`, explicitly grant access to `fortworth_weekly`, and allow repository contents and issues to be written. After reconnecting, verify that the integration appears as an active installation before retrying publication.
+
+## Publication target
+
+- Repository: `footeprint-prog/fortworth_weekly`
+- Branch: `main`
+- Pages source: GitHub Actions
