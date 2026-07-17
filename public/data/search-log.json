@@ -1,0 +1,38 @@
+[
+  {
+    "id": "S-003",
+    "searchedAt": "2026-07-16T20:35:00-05:00",
+    "area": "Crowley / Saginaw",
+    "platform": "Furnished Finder",
+    "query": "Monthly furnished inventory with dogs and kitchen access",
+    "reviewed": 15,
+    "qualified": 2,
+    "outcome": "Crowley has several leads near $1,100–$1,200; Saginaw inventory is thinner and mostly room-oriented.",
+    "nextSearch": "Open each Crowley suite and entire-unit listing; monitor Saginaw selectively.",
+    "agent": "ChatGPT"
+  },
+  {
+    "id": "S-002",
+    "searchedAt": "2026-07-16T20:25:00-05:00",
+    "area": "White Settlement / West Fort Worth",
+    "platform": "Apartments.com + Zillow",
+    "query": "Furnished inventory and apartments below $1,200",
+    "reviewed": 10,
+    "qualified": 4,
+    "outcome": "Furnished inventory starts near the stretch range; conventional units are cheaper and worth retaining as Plan B.",
+    "nextSearch": "Verify furnished premiums, dog costs, short leases and utility totals.",
+    "agent": "ChatGPT"
+  },
+  {
+    "id": "S-001",
+    "searchedAt": "2026-07-16T20:15:00-05:00",
+    "area": "Citywide and expanded radius",
+    "platform": "Multi-platform web search",
+    "query": "Furnished, dog-friendly, kitchen, approximately $1,000–$1,200, within 40 minutes",
+    "reviewed": 20,
+    "qualified": 9,
+    "outcome": "Most sub-$1,000 furnished results are private rooms. Entire units and suites require owner-direct negotiation or a modest stretch.",
+    "nextSearch": "Deep-search Benbrook, Hulen, Lake Worth, River Oaks, west Arlington and owner-direct channels.",
+    "agent": "ChatGPT"
+  }
+]

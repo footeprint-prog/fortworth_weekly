@@ -1,0 +1,25 @@
+name: Research handoff
+description: Record a search pass, new source, area, or unresolved research path.
+title: "Research handoff: "
+labels: ["research"]
+body:
+  - type: input
+    id: area
+    attributes:
+      label: Area or platform
+    validations:
+      required: true
+  - type: textarea
+    id: work
+    attributes:
+      label: Work completed
+    validations:
+      required: true
+  - type: textarea
+    id: findings
+    attributes:
+      label: Findings and rejected options
+  - type: textarea
+    id: next
+    attributes:
+      label: Recommended next search

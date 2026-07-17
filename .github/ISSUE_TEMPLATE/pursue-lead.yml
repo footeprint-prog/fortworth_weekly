@@ -1,0 +1,27 @@
+name: Pursue a rental lead
+description: Track contact, verification, and decision-making for one rental lead.
+title: "Pursue: "
+labels: ["lead"]
+body:
+  - type: input
+    id: lead-id
+    attributes:
+      label: Lead ID
+      placeholder: L-001
+    validations:
+      required: true
+  - type: input
+    id: listing
+    attributes:
+      label: Listing URL
+    validations:
+      required: true
+  - type: textarea
+    id: verify
+    attributes:
+      label: What needs verification?
+      description: Include total monthly cost, dog terms, kitchen details, availability, and lease minimum.
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Contact outcome and next step
