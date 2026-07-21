@@ -26,10 +26,15 @@ Each record must have a unique stable `id`. Keep URLs public and do not commit p
 
 ### Cost and requirements
 
-- `monthlyRent`, `utilitiesMonthly`, `petCostMonthly`, `petDeposit`, `estimatedAllIn`
+- `monthlyRent`, `mandatoryFeesMonthly`, `utilitiesMonthly`, `petCostMonthly`, `petDeposit`, `parkingCostMonthly`, `estimatedAllIn`
+- `upfrontCosts`: human-readable move-in costs; keep blank when unknown
 - `kitchen`: `full`, `kitchenette`, `shared`, `unknown`, or `none`
 - `petPolicy`: `confirmed`, `likely`, `unknown`, or `not-allowed`
 - `furnished`: `true`, `false`, or `null`
+- `leaseTermMinMonths`, `leaseTermMaxMonths`: normalized bounds; use `null`, never `0`, when unknown
+- `leaseTermCategory`: `confirmed-3-6`, `under-12`, `flexible`, `unknown`, or `12-plus`
+- `sublet`, `leaseTakeover`, `ownerDirect`: `true`, `false`, or `null`; never infer ownership or exact terms from vague marketing language
+- `contactVerified`, `sourceVerified`: explicit booleans controlling actionability
 - `status`: research workflow status
 - `confidence`: `high`, `medium`, or `low`
 - `verificationGaps`: unresolved factual questions
@@ -49,7 +54,7 @@ The scoring model is implemented in `src/lib/scoring.ts` and is fully tested. It
 6. Commute
 7. Research confidence and verification completeness
 
-Hard-requirement conflicts cap a lead even when the headline price is attractive. Shared kitchens cannot rank as requirement-ready, inventory pools cannot outrank specific listings, rejected leads are capped, and unfurnished units remain Plan B.
+Hard-requirement conflicts cap a lead even when the headline price is attractive. Shared kitchens, no-dog listings, unfurnished listings, and 12-month-only terms remain visible as explicit fallbacks. A listing cannot be requirement-ready without confirmed dogs, a private kitchen, acceptable furnishings, a qualifying term, a direct source, and usable contact.
 
 ## `search-log.json`
 

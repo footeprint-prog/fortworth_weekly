@@ -11,6 +11,7 @@ import { LeadCard } from './components/LeadCard'
 import { LeadDrawer } from './components/LeadDrawer'
 import { FilterPanel } from './components/FilterPanel'
 import { OperationsView } from './components/OperationsView'
+import { petCategoryLabel, petPolicyCategory } from './lib/actionability'
 
 type View = 'leads' | 'operations'
 
@@ -47,6 +48,10 @@ export default function App() {
   const favorites = useMemo(() => new Set(Object.entries(userState.leads).filter(([, state]) => state.favorite).map(([id]) => id)), [userState])
   const mergedLeads = useMemo(() => leads.map((lead) => ({ ...lead, status: userState.leads[lead.id]?.status ?? lead.status })), [leads, userState])
   const visibleLeads = useMemo(() => sortLeads(filterLeads(mergedLeads, filters, favorites), sort), [mergedLeads, filters, favorites, sort])
+  const petGroups = useMemo(() => (['accepts-two', 'unclear', 'not-allowed'] as const).map((category) => ({
+    category,
+    leads: visibleLeads.filter((lead) => petPolicyCategory(lead) === category),
+  })).filter((group) => group.leads.length > 0), [visibleLeads])
   const metrics = useMemo(() => {
     const assessments = mergedLeads.map(assessLead)
     return {
@@ -120,8 +125,11 @@ export default function App() {
               {loading && <div className="empty-state"><div className="spinner" /><h3>Loading lead database…</h3></div>}
               {loadError && <div className="empty-state error"><Icon name="warning" size={30} /><h3>Could not load the database</h3><p>{loadError}</p><button className="secondary-button" onClick={refreshData}>Try again</button></div>}
               {!loading && !loadError && visibleLeads.length === 0 && <div className="empty-state"><Icon name="search" size={30} /><h3>No leads match these filters</h3><p>Raise the price ceiling or clear one of the selected filters.</p><button className="secondary-button" onClick={() => setFilters({ ...defaultFilters })}>Reset filters</button></div>}
-              <div className="lead-list">
-                {visibleLeads.map((lead) => <LeadCard key={lead.id} lead={lead} userState={userState.leads[lead.id]} onOpen={setSelected} onFavorite={(id) => updateLeadState(id, { favorite: !userState.leads[id]?.favorite, lastUpdated: new Date().toISOString() })} />)}
+              <div className="lead-groups">
+                {petGroups.map((group) => <section className={`pet-group pet-group-${group.category}`} key={group.category} aria-labelledby={`pet-group-${group.category}`}>
+                  <div className="group-heading"><h3 id={`pet-group-${group.category}`}>{petCategoryLabel(group.category)}</h3><span>{group.leads.length}</span></div>
+                  <div className="lead-list">{group.leads.map((lead) => <LeadCard key={lead.id} lead={lead} userState={userState.leads[lead.id]} onOpen={setSelected} onFavorite={(id) => updateLeadState(id, { favorite: !userState.leads[id]?.favorite, lastUpdated: new Date().toISOString() })} />)}</div>
+                </section>)}
               </div>
             </section>
           </div>

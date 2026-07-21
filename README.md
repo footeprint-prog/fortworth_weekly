@@ -5,10 +5,12 @@ A production-oriented decision-support dashboard for finding furnished, dog-frie
 ## Product capabilities
 
 - Ranks specific listings and research pools with an explainable 100-point score
-- Enforces the real operating requirements: private kitchenette/full kitchen, furnished, and approval for two small dogs
+- Normalizes and ranks 3–6 month, under-one-year, flexible, unknown, and 12-month fallback terms
+- Groups results by confirmed two-dog acceptance, unclear pet policy, and no-dog fallback comparisons
+- Requires a verified direct source and usable contact channel before calling a lead actionable
 - Prioritizes guest houses, mother-in-law suites, garage apartments, furnished studios, and one-bedrooms
 - Separates requirement-ready leads, promising leads, research leads, disqualified options, and unfurnished Plan B inventory
-- Filters by price, area, housing type, privacy, status, pet policy, furnishings, and shortlist
+- Filters by price, area, housing type, privacy, status, pet policy, lease term, kitchen, furnishings, sublet, owner-direct, lease takeover, and shortlist
 - Saves shortlist, notes, and status decisions locally in the browser
 - Imports and exports portable decision backups
 - Opens prefilled GitHub issues for pursuing or verifying a lead
@@ -34,11 +36,20 @@ This runs linting, unit tests, TypeScript compilation, and a production build.
 
 ## Updating research data
 
-Edit the JSON files in `public/data/`. See:
+Use the validated ingestion command for structured research updates:
+
+```bash
+npm run research:upsert -- path/to/payload.json
+npm run research:upsert -- path/to/payload.json --write
+npm run check
+```
+
+The first command is a dry run. The write form preserves stable IDs, matches normalized source URLs, appends history for material changes, and updates leads, search logs, and coverage atomically. Review the Git diff before publishing. See:
 
 - [Data schema](docs/DATA_SCHEMA.md)
 - [Agent handoff](docs/AGENT_HANDOFF.md)
 - [Architecture](docs/ARCHITECTURE.md)
+- [Research ingestion](docs/RESEARCH_INGESTION.md)
 - [Roadmap](docs/ROADMAP.md)
 
 ## Deployment

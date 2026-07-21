@@ -3,6 +3,7 @@ import type { Lead, LeadStatus, UserLeadState } from '../types'
 import { assessLead, fitLabel, formatMoney, unitCategoryLabel } from '../lib/scoring'
 import { createIssueUrl } from '../lib/github'
 import { Icon } from './Icon'
+import { hasDirectSource, hasUsableContact, isActionable, leaseTermLabel, petCategoryLabel, petPolicyCategory } from '../lib/actionability'
 
 interface Props {
   lead: Lead | null
@@ -37,6 +38,8 @@ export function LeadDrawer({ lead, state, onClose, onUpdate }: Props) {
   if (!lead) return null
   const merged = { ...lead, status: state?.status ?? lead.status }
   const assessment = assessLead(merged)
+  const actionable = isActionable(lead)
+  const copyText = (value: string) => value && navigator.clipboard.writeText(value)
 
   return (
     <div className="drawer-backdrop" onMouseDown={onClose}>
@@ -64,12 +67,15 @@ export function LeadDrawer({ lead, state, onClose, onUpdate }: Props) {
         </div>
 
         <section className="detail-grid">
+          <Detail icon="map" label="Address / location" value={lead.address || lead.area} />
           <Detail icon="kitchen" label="Kitchen" value={lead.kitchenDetails} />
           <Detail icon="paw" label="Dogs" value={lead.petDetails} />
           <Detail icon="home" label="Furnishing" value={lead.furnished === true ? 'Furnished' : lead.furnished === false ? 'Unfurnished' : 'Needs verification'} />
           <Detail icon="map" label="Parking" value={lead.parking} />
           <Detail icon="clock" label="Minimum stay" value={lead.minStay} />
+          <Detail icon="clock" label="Normalized lease term" value={leaseTermLabel(lead.leaseTermCategory)} />
           <Detail icon="activity" label="Availability" value={lead.availability} />
+          <Detail icon="paw" label="Pet-policy category" value={petCategoryLabel(petPolicyCategory(lead))} />
         </section>
 
         <section className="drawer-section">
@@ -96,10 +102,13 @@ export function LeadDrawer({ lead, state, onClose, onUpdate }: Props) {
           <h3>Cost detail</h3>
           <div className="cost-lines">
             <CostLine label="Monthly rent" value={lead.monthlyRent} />
+            <CostLine label="Mandatory recurring fees" value={lead.mandatoryFeesMonthly} />
             <CostLine label="Utilities" value={lead.utilitiesIncluded ? 0 : lead.utilitiesMonthly} suffix={lead.utilitiesIncluded ? 'included' : undefined} />
             <CostLine label="Recurring pet cost" value={lead.petCostMonthly} />
+            <CostLine label="Monthly parking" value={lead.parkingCostMonthly} />
             <CostLine label="One-time pet deposit" value={lead.petDeposit} />
           </div>
+          <p className="body-copy"><strong>Upfront move-in costs:</strong> {lead.upfrontCosts || 'Not verified'}</p>
         </section>
 
         {lead.verificationGaps.length > 0 && (
@@ -138,13 +147,17 @@ export function LeadDrawer({ lead, state, onClose, onUpdate }: Props) {
         <section className="drawer-section">
           <h3>Contact and handoff</h3>
           <div className="action-grid">
-            <a className="primary-button" href={lead.sourceUrl} target="_blank" rel="noreferrer"><Icon name="external" /> Open listing</a>
+            {hasDirectSource(lead) && <a className="primary-button" href={lead.sourceUrl} target="_blank" rel="noopener noreferrer"><Icon name="external" /> Open direct listing</a>}
             {lead.phone && <a className="secondary-button" href={`tel:${lead.phone}`}>Call {lead.phone}</a>}
             {lead.email && <a className="secondary-button" href={`mailto:${lead.email}`}>Email contact</a>}
+            <button className="secondary-button" disabled={!lead.address} onClick={() => copyText(lead.address)}>Copy address</button>
+            <button className="secondary-button" disabled={!hasUsableContact(lead)} onClick={() => copyText([lead.contactName, lead.contactMethod, lead.phone, lead.email].filter(Boolean).join(' · '))}>Copy contact details</button>
+            <button className="secondary-button" onClick={() => onUpdate(lead.id, { status: 'contacted', lastUpdated: new Date().toISOString() })}>Mark contacted</button>
             <a className="secondary-button" href={createIssueUrl(lead, 'pursue')} target="_blank" rel="noreferrer"><Icon name="github" /> Create pursue issue</a>
             <a className="secondary-button" href={createIssueUrl(lead, 'verify')} target="_blank" rel="noreferrer"><Icon name="check" /> Request verification</a>
           </div>
-          <p className="contact-meta">{lead.contactName || 'Contact not yet identified'} · {lead.contactMethod || lead.sourceName}</p>
+          <p className="contact-meta"><strong>{actionable ? 'Ready to contact' : 'Incomplete research lead'}</strong> · {lead.contactName || 'Contact not yet identified'} · {lead.contactMethod || lead.sourceName}</p>
+          <p className="contact-meta">Source: {lead.sourceName} · {lead.sourceVerified ? 'direct source verified' : 'source needs verification'} · {lead.contactVerified ? 'contact channel verified' : 'contact needs verification'}</p>
         </section>
 
         <section className="drawer-section history">

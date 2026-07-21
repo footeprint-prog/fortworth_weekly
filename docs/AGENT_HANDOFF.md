@@ -4,11 +4,15 @@
 
 Find the highest-value furnished home base near Baylor Scott & White All Saints Medical Center, centered on approximately **$1,000 monthly all-in** with a stretch ceiling near **$1,150** for exceptional value.
 
-## Hard requirements
+## Primary qualification
 
 - At least a private kitchenette or full kitchen. Shared kitchens do not qualify as requirement-ready.
 - Two small dogs must be accepted.
-- Furnished is required for primary candidates. Conventional unfurnished apartments may be retained only as clearly labeled Plan B options with furnishing costs included.
+- Furnished is preferred for primary candidates. Clearly label unfurnished and partially furnished Plan B options and estimate minimal furnishing costs when practical.
+- Require a confirmed 3–6 month term, or at minimum a confirmed term under one year, for requirement-ready leads.
+- Require a verified direct listing/source URL and a usable verified contact or listing inquiry channel before presenting a lead as ready to contact.
+
+No-dog, shared-kitchen, unfurnished, and 12-month-only options may remain visible as explicit comparisons. They must never rank as requirement-ready or promising pet-compatible inventory.
 
 ## Housing priority order
 
@@ -44,10 +48,10 @@ Record the normalized priority in `unitCategory` rather than relying on free-tex
 
 ## Update protocol
 
-1. Add or update a lead in `public/data/leads.json`.
-2. Append a search pass to `public/data/search-log.json`.
-3. Update the relevant row in `public/data/area-coverage.json`.
-4. Preserve stable IDs and append history when facts change.
+1. Prepare a structured payload described in `docs/RESEARCH_INGESTION.md`.
+2. Dry-run `npm run research:upsert -- payload.json`.
+3. Review the summary, then repeat with `--write`.
+4. Preserve stable IDs and append history when facts change; the CLI enforces both ID and normalized-source matching.
 5. Run `npm run check` before publishing.
 6. Use GitHub issues for contact outcomes, pursue decisions, and agent-to-agent questions.
 
@@ -74,3 +78,10 @@ The rental watch runs three times daily at approximately 8:00 a.m., 1:00 p.m., a
 - Operations reporting now exposes coverage gaps and current search metrics.
 - Five current Airbnb guest-house records were added as `L-010` through `L-014`; exact date pricing and dog verification remain explicit next actions.
 - The GitHub repository is readable but the connected integration returns HTTP 403 for every write operation. See `docs/GITHUB_CONNECTION_BLOCKER.md` and use the prepared Git bundle or source ZIP until the integration is reinstalled with write access.
+
+## July 20, 2026 Codex migration
+
+- Added normalized lease-term fields, source/contact verification, actionability checks, and sublet/owner-direct/lease-takeover flags.
+- Pet categories now remain visibly grouped; no-dog listings are fallback-only instead of hidden.
+- Added safe-area, 44-pixel target, portrait/landscape, drawer, and mobile-action hardening for iPhone 16 Pro Max.
+- Added the dry-run-first research ingestion CLI. This prepares repository updates from external email research but does not connect Gmail or claim an automated email-to-GitHub write path.
