@@ -1,4 +1,4 @@
-import type { AreaCoverage, Lead, SearchLogEntry } from '../types'
+import type { AreaCoverage, Lead, LeaseTermCategory, SearchLogEntry } from '../types'
 
 interface DashboardData {
   leads: Lead[]
@@ -23,7 +23,7 @@ export async function loadDashboardData(baseUrl: string): Promise<DashboardData>
 export function validateLeads(value: unknown): Lead[] {
   if (!Array.isArray(value)) throw new Error('Lead database must be an array')
   const seen = new Set<string>()
-  value.forEach((lead, index) => {
+  return value.map((lead, index) => {
     assertRecord(lead, `Lead ${index + 1}`)
     assertString(lead.id, `Lead ${index + 1} id`)
     if (seen.has(lead.id)) throw new Error(`Duplicate lead id: ${lead.id}`)
@@ -37,8 +37,43 @@ export function validateLeads(value: unknown): Lead[] {
     assertNullableNumber(lead.monthlyRent, `${lead.id} monthlyRent`)
     assertNullableNumber(lead.estimatedAllIn, `${lead.id} estimatedAllIn`)
     assertIsoDate(lead.lastChecked, `${lead.id} lastChecked`)
+    const migrated = migrateLead(lead)
+    for (const field of ['address', 'upfrontCosts']) assertText(migrated[field], `${lead.id} ${field}`)
+    for (const field of ['mandatoryFeesMonthly', 'parkingCostMonthly', 'leaseTermMinMonths', 'leaseTermMaxMonths']) {
+      assertNullableNumber(migrated[field], `${lead.id} ${field}`)
+    }
+    const leaseMin = migrated.leaseTermMinMonths as number | null
+    const leaseMax = migrated.leaseTermMaxMonths as number | null
+    if (leaseMin !== null && leaseMax !== null && leaseMax < leaseMin) {
+      throw new Error(`${lead.id} leaseTermMaxMonths must be at least leaseTermMinMonths`)
+    }
+    if (!leaseTermCategories.includes(migrated.leaseTermCategory as LeaseTermCategory)) throw new Error(`${lead.id} leaseTermCategory is invalid`)
+    for (const field of ['sublet', 'leaseTakeover', 'ownerDirect']) assertNullableBoolean(migrated[field], `${lead.id} ${field}`)
+    for (const field of ['contactVerified', 'sourceVerified']) {
+      if (typeof migrated[field] !== 'boolean') throw new Error(`${lead.id} ${field} must be a boolean`)
+    }
+    return migrated as unknown as Lead
   })
-  return value as Lead[]
+}
+
+const leaseTermCategories: LeaseTermCategory[] = ['confirmed-3-6', 'under-12', '12-plus', 'flexible', 'unknown']
+
+function migrateLead(lead: Record<string, unknown>): Record<string, unknown> {
+  return {
+    ...lead,
+    address: lead.address === undefined ? '' : lead.address,
+    mandatoryFeesMonthly: lead.mandatoryFeesMonthly ?? null,
+    parkingCostMonthly: lead.parkingCostMonthly ?? null,
+    upfrontCosts: lead.upfrontCosts === undefined ? '' : lead.upfrontCosts,
+    leaseTermMinMonths: lead.leaseTermMinMonths ?? null,
+    leaseTermMaxMonths: lead.leaseTermMaxMonths ?? null,
+    leaseTermCategory: lead.leaseTermCategory ?? 'unknown',
+    sublet: lead.sublet ?? null,
+    leaseTakeover: lead.leaseTakeover ?? null,
+    ownerDirect: lead.ownerDirect ?? null,
+    contactVerified: lead.contactVerified === undefined ? false : lead.contactVerified,
+    sourceVerified: lead.sourceVerified === undefined ? false : lead.sourceVerified,
+  }
 }
 
 export function validateSearchLogs(value: unknown): SearchLogEntry[] {
@@ -96,6 +131,14 @@ function assertNullableNumber(value: unknown, label: string): void {
   if (value !== null && (typeof value !== 'number' || !Number.isFinite(value) || value < 0)) {
     throw new Error(`${label} must be null or a non-negative number`)
   }
+}
+
+function assertText(value: unknown, label: string): asserts value is string {
+  if (typeof value !== 'string') throw new Error(`${label} must be a string`)
+}
+
+function assertNullableBoolean(value: unknown, label: string): void {
+  if (value !== null && typeof value !== 'boolean') throw new Error(`${label} must be null or a boolean`)
 }
 
 function assertIsoDate(value: unknown, label: string): void {

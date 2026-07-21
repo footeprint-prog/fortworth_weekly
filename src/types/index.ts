@@ -13,6 +13,8 @@ export type LeadStatus =
 export type Confidence = 'high' | 'medium' | 'low'
 export type KitchenLevel = 'full' | 'kitchenette' | 'shared' | 'unknown' | 'none'
 export type PetPolicy = 'confirmed' | 'likely' | 'unknown' | 'not-allowed'
+export type PetPolicyCategory = 'accepts-two' | 'unclear' | 'not-allowed'
+export type LeaseTermCategory = 'confirmed-3-6' | 'under-12' | '12-plus' | 'flexible' | 'unknown'
 export type UnitPrivacy = 'entire-unit' | 'private-suite' | 'private-room' | 'shared-room' | 'inventory-pool'
 
 export type UnitCategory =
@@ -39,14 +41,18 @@ export interface Lead {
   title: string
   area: string
   propertyType: string
+  address: string
   unitCategory: UnitCategory
   privacy: UnitPrivacy
   monthlyRent: number | null
+  mandatoryFeesMonthly: number | null
   utilitiesMonthly: number | null
   utilitiesIncluded: boolean | null
   petCostMonthly: number | null
   petDeposit: number | null
+  parkingCostMonthly: number | null
   estimatedAllIn: number | null
+  upfrontCosts: string
   kitchen: KitchenLevel
   kitchenDetails: string
   furnished: boolean | null
@@ -54,6 +60,12 @@ export interface Lead {
   petDetails: string
   parking: string
   minStay: string
+  leaseTermMinMonths: number | null
+  leaseTermMaxMonths: number | null
+  leaseTermCategory: LeaseTermCategory
+  sublet: boolean | null
+  leaseTakeover: boolean | null
+  ownerDirect: boolean | null
   availability: string
   availableFrom: string | null
   commuteMinutes: number | null
@@ -63,6 +75,8 @@ export interface Lead {
   email: string
   sourceName: string
   sourceUrl: string
+  contactVerified: boolean
+  sourceVerified: boolean
   lastChecked: string
   status: LeadStatus
   confidence: Confidence

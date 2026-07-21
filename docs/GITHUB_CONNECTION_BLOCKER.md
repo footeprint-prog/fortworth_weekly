@@ -1,6 +1,8 @@
 # GitHub integration status
 
-## Current status: repository is readable, write operations are blocked
+## Current status: local Codex workflow works; remote publication is not yet verified
+
+On July 20, 2026, Codex successfully cloned the repository locally and created the `codex/mobile-email-directives` feature branch. Local file writes, tests, and builds work. A remote push or pull request has not yet been attempted, so GitHub publication permission remains unverified.
 
 On July 16, 2026, the connected GitHub account resolved as `footeprint-prog`, and the repository metadata for `footeprint-prog/fortworth_weekly` reported administrative and push permissions. However, every attempted mutation returned HTTP 403 with `Resource not accessible by integration`, including:
 
@@ -8,7 +10,7 @@ On July 16, 2026, the connected GitHub account resolved as `footeprint-prog`, an
 - Git Data API blob creation
 - Issue creation
 
-The connector also returned no active GitHub App installations. This means the repository can be discovered through the connected account, but the integration is not currently installed with usable write permissions for repository contents or issues.
+The earlier ChatGPT connector still reported no active GitHub App installations. Local Git access and the separate scheduled ChatGPT/Gmail automation are different credential paths; success in Codex does not prove that the scheduled workflow can write to GitHub.
 
 ## Recovery artifacts
 

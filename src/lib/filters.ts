@@ -1,4 +1,4 @@
-import type { Lead, LeadStatus, PetPolicy, UnitCategory, UnitPrivacy } from '../types'
+import type { KitchenLevel, Lead, LeadStatus, LeaseTermCategory, PetPolicy, UnitCategory, UnitPrivacy } from '../types'
 import { assessLead, calculateLeadScore } from './scoring'
 
 export interface LeadFilters {
@@ -9,8 +9,12 @@ export interface LeadFilters {
   categories: UnitCategory[]
   privacy: UnitPrivacy[]
   petPolicies: PetPolicy[]
-  kitchensOnly: boolean
-  furnishedOnly: boolean
+  leaseTermCategories: LeaseTermCategory[]
+  kitchens: KitchenLevel[]
+  furnishingStatuses: Array<'furnished' | 'unfurnished' | 'unknown'>
+  subletOnly: boolean
+  ownerDirectOnly: boolean
+  leaseTakeoverOnly: boolean
   requirementReadyOnly: boolean
   specificListingsOnly: boolean
   favoritesOnly: boolean
@@ -26,8 +30,12 @@ export const defaultFilters: LeadFilters = {
   categories: [],
   privacy: [],
   petPolicies: [],
-  kitchensOnly: true,
-  furnishedOnly: false,
+  leaseTermCategories: [],
+  kitchens: [],
+  furnishingStatuses: [],
+  subletOnly: false,
+  ownerDirectOnly: false,
+  leaseTakeoverOnly: false,
   requirementReadyOnly: false,
   specificListingsOnly: false,
   favoritesOnly: false,
@@ -47,8 +55,13 @@ export function filterLeads(
     if (filters.categories.length && !filters.categories.includes(lead.unitCategory)) return false
     if (filters.privacy.length && !filters.privacy.includes(lead.privacy)) return false
     if (filters.petPolicies.length && !filters.petPolicies.includes(lead.petPolicy)) return false
-    if (filters.kitchensOnly && !['full', 'kitchenette'].includes(lead.kitchen)) return false
-    if (filters.furnishedOnly && lead.furnished !== true) return false
+    if (filters.leaseTermCategories.length && !filters.leaseTermCategories.includes(lead.leaseTermCategory)) return false
+    if (filters.kitchens.length && !filters.kitchens.includes(lead.kitchen)) return false
+    const furnishingStatus = lead.furnished === true ? 'furnished' : lead.furnished === false ? 'unfurnished' : 'unknown'
+    if (filters.furnishingStatuses.length && !filters.furnishingStatuses.includes(furnishingStatus)) return false
+    if (filters.subletOnly && lead.sublet !== true) return false
+    if (filters.ownerDirectOnly && lead.ownerDirect !== true) return false
+    if (filters.leaseTakeoverOnly && lead.leaseTakeover !== true) return false
     if (filters.requirementReadyOnly && assessLead(lead).fit !== 'qualified') return false
     if (filters.specificListingsOnly && (lead.unitCategory === 'inventory-pool' || lead.privacy === 'inventory-pool')) return false
     if (filters.favoritesOnly && !favorites.has(lead.id)) return false
@@ -58,6 +71,8 @@ export function filterLeads(
         lead.area,
         lead.propertyType,
         lead.unitCategory,
+        lead.address,
+        lead.leaseTermCategory,
         lead.notes,
         lead.tags.join(' '),
         lead.sourceName,

@@ -1,7 +1,8 @@
-import type { Lead, LeadStatus, PetPolicy, UnitCategory, UnitPrivacy } from '../types'
+import type { KitchenLevel, Lead, LeadStatus, LeaseTermCategory, PetPolicy, UnitCategory, UnitPrivacy } from '../types'
 import type { LeadFilters, SortKey } from '../lib/filters'
 import { defaultFilters } from '../lib/filters'
 import { unitCategoryLabel } from '../lib/scoring'
+import { leaseTermLabel } from '../lib/actionability'
 import { Icon } from './Icon'
 
 interface Props {
@@ -17,11 +18,14 @@ interface Props {
 const statusOptions: LeadStatus[] = ['new', 'investigate', 'contacted', 'awaiting-reply', 'tour-verify', 'shortlist', 'rejected', 'plan-b', 'market-benchmark', 'search-pool']
 const privacyOptions: UnitPrivacy[] = ['entire-unit', 'private-suite', 'private-room', 'shared-room', 'inventory-pool']
 const petOptions: PetPolicy[] = ['confirmed', 'likely', 'unknown', 'not-allowed']
+const leaseOptions: LeaseTermCategory[] = ['confirmed-3-6', 'under-12', 'flexible', 'unknown', '12-plus']
+const kitchenOptions: KitchenLevel[] = ['full', 'kitchenette', 'shared', 'unknown', 'none']
+const furnishingOptions = ['furnished', 'unfurnished', 'unknown'] as const
 
 export function FilterPanel({ leads, filters, sort, onFilters, onSort, mobileOpen, onMobileClose }: Props) {
   const areas = [...new Set(leads.map((lead) => lead.area))].sort()
   const categories = [...new Set(leads.map((lead) => lead.unitCategory))].sort((a, b) => unitCategoryLabel(a).localeCompare(unitCategoryLabel(b)))
-  const toggle = <T extends string>(key: 'areas' | 'statuses' | 'categories' | 'privacy' | 'petPolicies', value: T) => {
+  const toggle = <T extends string>(key: 'areas' | 'statuses' | 'categories' | 'privacy' | 'petPolicies' | 'leaseTermCategories' | 'kitchens' | 'furnishingStatuses', value: T) => {
     const current = filters[key] as T[]
     onFilters({ ...filters, [key]: current.includes(value) ? current.filter((item) => item !== value) : [...current, value] })
   }
@@ -44,17 +48,27 @@ export function FilterPanel({ leads, filters, sort, onFilters, onSort, mobileOpe
         </select>
       </label>
       <FilterGroup title="Essentials">
-        <Check label="Real kitchen/kitchenette" checked={filters.kitchensOnly} onChange={() => onFilters({ ...filters, kitchensOnly: !filters.kitchensOnly })} />
-        <Check label="Furnished only" checked={filters.furnishedOnly} onChange={() => onFilters({ ...filters, furnishedOnly: !filters.furnishedOnly })} />
         <Check label="Requirement-ready only" checked={filters.requirementReadyOnly} onChange={() => onFilters({ ...filters, requirementReadyOnly: !filters.requirementReadyOnly })} />
         <Check label="Specific listings only" checked={filters.specificListingsOnly} onChange={() => onFilters({ ...filters, specificListingsOnly: !filters.specificListingsOnly })} />
         <Check label="Shortlisted only" checked={filters.favoritesOnly} onChange={() => onFilters({ ...filters, favoritesOnly: !filters.favoritesOnly })} />
+        <Check label="Sublets only" checked={filters.subletOnly} onChange={() => onFilters({ ...filters, subletOnly: !filters.subletOnly })} />
+        <Check label="Owner-direct only" checked={filters.ownerDirectOnly} onChange={() => onFilters({ ...filters, ownerDirectOnly: !filters.ownerDirectOnly })} />
+        <Check label="Lease takeovers only" checked={filters.leaseTakeoverOnly} onChange={() => onFilters({ ...filters, leaseTakeoverOnly: !filters.leaseTakeoverOnly })} />
       </FilterGroup>
       <FilterGroup title="Housing type">
         {categories.map((category: UnitCategory) => <Check key={category} label={unitCategoryLabel(category)} checked={filters.categories.includes(category)} onChange={() => toggle('categories', category)} />)}
       </FilterGroup>
       <FilterGroup title="Dog policy">
-        {petOptions.map((option) => <Check key={option} label={option.replaceAll('-', ' ')} checked={filters.petPolicies.includes(option)} onChange={() => toggle('petPolicies', option)} />)}
+        {petOptions.map((option) => <Check key={option} label={option === 'confirmed' ? 'Accepts two small dogs' : option === 'likely' ? 'Pets indicated; confirm two dogs' : option === 'not-allowed' ? 'Dogs not allowed' : 'Pet policy unknown'} checked={filters.petPolicies.includes(option)} onChange={() => toggle('petPolicies', option)} />)}
+      </FilterGroup>
+      <FilterGroup title="Lease term">
+        {leaseOptions.map((option) => <Check key={option} label={leaseTermLabel(option)} checked={filters.leaseTermCategories.includes(option)} onChange={() => toggle('leaseTermCategories', option)} />)}
+      </FilterGroup>
+      <FilterGroup title="Kitchen">
+        {kitchenOptions.map((option) => <Check key={option} label={option.replaceAll('-', ' ')} checked={filters.kitchens.includes(option)} onChange={() => toggle('kitchens', option)} />)}
+      </FilterGroup>
+      <FilterGroup title="Furnishing">
+        {furnishingOptions.map((option) => <Check key={option} label={option} checked={filters.furnishingStatuses.includes(option)} onChange={() => toggle('furnishingStatuses', option)} />)}
       </FilterGroup>
       <FilterGroup title="Privacy">
         {privacyOptions.map((option) => <Check key={option} label={option.replaceAll('-', ' ')} checked={filters.privacy.includes(option)} onChange={() => toggle('privacy', option)} />)}

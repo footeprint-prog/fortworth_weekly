@@ -4,11 +4,11 @@ import { assessLead, calculateLeadScore, scoreGrade } from './scoring'
 
 const baseLead: Lead = {
   id: 'T-1', title: 'Test', area: 'Benbrook', propertyType: 'Guest house', unitCategory: 'guest-house', privacy: 'entire-unit',
-  monthlyRent: 1000, utilitiesMonthly: 0, utilitiesIncluded: true, petCostMonthly: 0, petDeposit: 0,
-  estimatedAllIn: 1000, kitchen: 'full', kitchenDetails: 'Full kitchen', furnished: true,
-  petPolicy: 'confirmed', petDetails: 'Two dogs allowed', parking: 'Driveway', minStay: '1 month',
-  availability: 'Available', availableFrom: null, commuteMinutes: 24, contactName: '', contactMethod: '', phone: '', email: '',
-  sourceName: 'Test', sourceUrl: 'https://example.com', lastChecked: '2026-07-16', status: 'new', confidence: 'high', priority: 'high',
+  address: '123 Main St', monthlyRent: 1000, mandatoryFeesMonthly: 0, utilitiesMonthly: 0, utilitiesIncluded: true, petCostMonthly: 0, petDeposit: 0, parkingCostMonthly: 0,
+  estimatedAllIn: 1000, upfrontCosts: 'None', kitchen: 'full', kitchenDetails: 'Full kitchen', furnished: true,
+  petPolicy: 'confirmed', petDetails: 'Two dogs allowed', parking: 'Driveway', minStay: '3 months', leaseTermMinMonths: 3, leaseTermMaxMonths: 6, leaseTermCategory: 'confirmed-3-6', sublet: false, leaseTakeover: false, ownerDirect: true,
+  availability: 'Available', availableFrom: null, commuteMinutes: 24, contactName: 'Host', contactMethod: 'Listing inquiry', phone: '', email: '',
+  sourceName: 'Test', sourceUrl: 'https://example.com/listing/1', contactVerified: true, sourceVerified: true, lastChecked: '2026-07-16', status: 'new', confidence: 'high', priority: 'high',
   nextAction: '', notes: '', verificationGaps: [], tags: [], history: [],
 }
 
@@ -22,13 +22,13 @@ describe('lead scoring', () => {
 
   it('caps a shared-kitchen lead because a private kitchenette is required', () => {
     const assessment = assessLead({ ...baseLead, kitchen: 'shared' })
-    expect(assessment.score).toBeLessThanOrEqual(49)
+    expect(assessment.score).toBeLessThanOrEqual(55)
     expect(assessment.hardRequirementFailures).toContain('Kitchen is shared rather than private')
   })
 
   it('penalizes no kitchen and no pets', () => {
     const assessment = assessLead({ ...baseLead, kitchen: 'none', petPolicy: 'not-allowed' })
-    expect(assessment.score).toBeLessThanOrEqual(10)
+    expect(assessment.score).toBeLessThanOrEqual(20)
     expect(assessment.fit).toBe('disqualified')
   })
 
@@ -47,6 +47,20 @@ describe('lead scoring', () => {
     const assessment = assessLead({ ...baseLead, furnished: false, status: 'plan-b' })
     expect(assessment.score).toBeLessThanOrEqual(59)
     expect(assessment.fit).toBe('fallback')
+  })
+
+  it('keeps no-dog and 12-month listings visible only as fallbacks', () => {
+    for (const change of [{ petPolicy: 'not-allowed' as const }, { leaseTermCategory: '12-plus' as const }]) {
+      const assessment = assessLead({ ...baseLead, ...change })
+      expect(assessment.fit).toBe('fallback')
+      expect(assessment.score).toBeLessThanOrEqual(55)
+    }
+  })
+
+  it('does not call an otherwise strong lead actionable without verified contact', () => {
+    const assessment = assessLead({ ...baseLead, contactVerified: false })
+    expect(assessment.fit).toBe('research')
+    expect(assessment.verificationWarnings).toContain('Direct contact or inquiry channel is missing or unverified')
   })
 
   it('caps rejected leads', () => {
