@@ -74,14 +74,18 @@
   {
     "area": "Crowley",
     "priority": "high",
-    "commuteGoal": "25–40 min",
-    "status": "monitoring",
+    "commuteGoal": "15–20 min",
+    "status": "deep-searched",
     "platforms": [
-      "Furnished Finder"
+      "Furnished Finder",
+      "Apartments.com",
+      "Realtor.com",
+      "TurboTenant",
+      "RentalSource"
     ],
-    "lastSearch": "2026-07-16",
-    "outlook": "possible",
-    "nextStep": "Review entire units and private suites; require a real kitchen and dog approval."
+    "lastSearch": "2026-07-30",
+    "outlook": "strong",
+    "nextStep": "Contact Jose Cabello about the $950 all-bills-paid tiny house; verify two-dog approval, shift-time commute, furnishings, parking and remaining fees."
   },
   {
     "area": "West Arlington",
