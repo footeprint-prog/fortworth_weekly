@@ -2,7 +2,7 @@
   {
     "area": "White Settlement / West Fort Worth",
     "priority": "high",
-    "commuteGoal": "15\u201325 min",
+    "commuteGoal": "15–25 min",
     "status": "monitoring",
     "platforms": [
       "Apartments.com",
@@ -15,7 +15,7 @@
   {
     "area": "Benbrook",
     "priority": "high",
-    "commuteGoal": "20\u201330 min",
+    "commuteGoal": "20–30 min",
     "status": "initial-pass",
     "platforms": [
       "Airbnb",
@@ -28,17 +28,21 @@
   {
     "area": "Hulen / Southwest Fort Worth",
     "priority": "high",
-    "commuteGoal": "15\u201330 min",
-    "status": "not-searched",
-    "platforms": [],
-    "lastSearch": null,
-    "outlook": "strong",
-    "nextStep": "Search studios, efficiencies, private suites and older multifamily properties."
+    "commuteGoal": "15–30 min",
+    "status": "deep-searched",
+    "platforms": [
+      "Apartments.com",
+      "Furnished Finder",
+      "Official property sites"
+    ],
+    "lastSearch": "2026-07-30",
+    "outlook": "possible",
+    "nextStep": "Obtain six-month furnished all-in quotes and written two-dog approval for The Hub and Axis-area inventory."
   },
   {
     "area": "Lake Worth / River Oaks",
     "priority": "high",
-    "commuteGoal": "20\u201330 min",
+    "commuteGoal": "20–30 min",
     "status": "not-searched",
     "platforms": [],
     "lastSearch": null,
@@ -48,7 +52,7 @@
   {
     "area": "North Richland Hills / Haltom City",
     "priority": "medium",
-    "commuteGoal": "25\u201335 min",
+    "commuteGoal": "25–35 min",
     "status": "not-searched",
     "platforms": [],
     "lastSearch": null,
@@ -58,7 +62,7 @@
   {
     "area": "Burleson",
     "priority": "medium",
-    "commuteGoal": "25\u201340 min",
+    "commuteGoal": "25–40 min",
     "status": "initial-pass",
     "platforms": [
       "ApartmentHomeLiving"
@@ -70,7 +74,7 @@
   {
     "area": "Crowley",
     "priority": "high",
-    "commuteGoal": "25\u201340 min",
+    "commuteGoal": "25–40 min",
     "status": "monitoring",
     "platforms": [
       "Furnished Finder"
@@ -82,17 +86,20 @@
   {
     "area": "West Arlington",
     "priority": "medium",
-    "commuteGoal": "25\u201340 min",
-    "status": "not-searched",
-    "platforms": [],
-    "lastSearch": null,
+    "commuteGoal": "25–40 min",
+    "status": "monitoring",
+    "platforms": [
+      "Apartments.com",
+      "Official property sites"
+    ],
+    "lastSearch": "2026-07-30",
     "outlook": "possible",
-    "nextStep": "Search sublets, furnished studios and owner-direct listings."
+    "nextStep": "Price a six-month TwentyOne15 unit with utilities, two dogs, and CORT furniture before comparing it with closer options."
   },
   {
     "area": "Saginaw / Alliance",
     "priority": "medium",
-    "commuteGoal": "25\u201340 min",
+    "commuteGoal": "25–40 min",
     "status": "initial-pass",
     "platforms": [
       "Furnished Finder"
@@ -104,7 +111,7 @@
   {
     "area": "Azle",
     "priority": "low",
-    "commuteGoal": "30\u201345 min",
+    "commuteGoal": "30–45 min",
     "status": "initial-pass",
     "platforms": [
       "Furnished Finder"
@@ -116,28 +123,44 @@
   {
     "area": "Medical District / Near Southside",
     "priority": "medium",
-    "commuteGoal": "5\u201315 min",
-    "status": "monitoring",
+    "commuteGoal": "5–15 min",
+    "status": "deep-searched",
     "platforms": [
       "Airbnb",
-      "Furnished Finder"
+      "Furnished Finder",
+      "Apartments.com",
+      "Travel Nurse Housing",
+      "Official property sites"
     ],
-    "lastSearch": "2026-07-16",
+    "lastSearch": "2026-07-30",
     "outlook": "strong",
-    "nextStep": "Price-check the identified private guest houses for exact assignment dates and verify two-dog terms."
+    "nextStep": "Focus on private-kitchen inventory; CoHo is over budget, Bryan Flats has a shared kitchen, and 1115 S Jennings rejects dogs."
   },
   {
     "area": "Owner-direct channels",
     "priority": "high",
     "commuteGoal": "Varies",
-    "status": "not-searched",
+    "status": "initial-pass",
     "platforms": [
       "Facebook groups",
       "Craigslist",
       "Local managers"
     ],
-    "lastSearch": null,
-    "outlook": "unknown",
-    "nextStep": "Search sublets, travel-clinician groups, ADUs and local property managers; verify ownership carefully."
+    "lastSearch": "2026-07-30",
+    "outlook": "possible",
+    "nextStep": "Reopen the 76105 studio while signed in and verify ownership, private kitchen, both dogs, exact address, and current availability."
+  },
+  {
+    "area": "East Fort Worth / Eastchase",
+    "priority": "medium",
+    "commuteGoal": "20–35 min",
+    "status": "monitoring",
+    "platforms": [
+      "Apartments.com",
+      "Official property sites"
+    ],
+    "lastSearch": "2026-07-30",
+    "outlook": "possible",
+    "nextStep": "Request a six-month furnished all-in quote from The Reese and compare it against west-side options."
   }
 ]

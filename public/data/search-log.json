@@ -1,5 +1,17 @@
 [
   {
+    "id": "S-005",
+    "searchedAt": "2026-07-30T08:30:00-05:00",
+    "area": "Fort Worth citywide / Hulen / Eastchase / West Arlington / Medical District",
+    "platform": "Official property sites + Apartments.com + Furnished Finder + Travel Nurse Housing + Facebook",
+    "query": "July recovery re-verification of nine reported short-term, furnished, owner-direct, and fallback leads",
+    "reviewed": 11,
+    "qualified": 9,
+    "outcome": "Reopened eight direct listing sources, retained one inaccessible Facebook lead as explicitly unverified, added nine non-duplicate lead records, corrected an Axis unit-title mismatch, and replaced two generic Zillow search URLs that collided under different stable IDs.",
+    "nextSearch": "Prioritize Cardinal Suite kitchen and two-dog confirmation; request six-month all-in quotes for The Hub, The Reese, and TwentyOne15; verify the owner-direct Facebook studio while signed in.",
+    "agent": "ChatGPT Work mode"
+  },
+  {
     "id": "S-004",
     "searchedAt": "2026-07-16T21:32:00-05:00",
     "area": "Medical District / TCU / citywide guest houses",
@@ -19,7 +31,7 @@
     "query": "Monthly furnished inventory with dogs and kitchen access",
     "reviewed": 15,
     "qualified": 2,
-    "outcome": "Crowley has several leads near $1,100\u2013$1,200; Saginaw inventory is thinner and mostly room-oriented.",
+    "outcome": "Crowley has several leads near $1,100–$1,200; Saginaw inventory is thinner and mostly room-oriented.",
     "nextSearch": "Open each Crowley suite and entire-unit listing; monitor Saginaw selectively.",
     "agent": "ChatGPT"
   },
@@ -40,7 +52,7 @@
     "searchedAt": "2026-07-16T20:15:00-05:00",
     "area": "Citywide and expanded radius",
     "platform": "Multi-platform web search",
-    "query": "Furnished, dog-friendly, kitchen, approximately $1,000\u2013$1,200, within 40 minutes",
+    "query": "Furnished, dog-friendly, kitchen, approximately $1,000–$1,200, within 40 minutes",
     "reviewed": 20,
     "qualified": 9,
     "outcome": "Most sub-$1,000 furnished results are private rooms. Entire units and suites require owner-direct negotiation or a modest stretch.",

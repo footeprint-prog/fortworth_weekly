@@ -68,7 +68,7 @@ Record the normalized priority in `unitCategory` rather than relying on free-tex
 
 ## Search cadence
 
-The rental watch runs three times daily at approximately 8:00 a.m., 1:00 p.m., and 6:00 p.m. Central. Material findings should be reflected in this repository during active working sessions.
+The rental watch runs four times daily at approximately 8:00 a.m., 1:00 p.m., 6:00 p.m., and 10:00 p.m. Central. The Erica reply watch and the data publisher run hourly. Material findings should be reflected through a validated data-only pull request.
 
 ## July 16, 2026 initialization update
 
@@ -85,3 +85,15 @@ The rental watch runs three times daily at approximately 8:00 a.m., 1:00 p.m., a
 - Pet categories now remain visibly grouped; no-dog listings are fallback-only instead of hidden.
 - Added safe-area, 44-pixel target, portrait/landscape, drawer, and mobile-action hardening for iPhone 16 Pro Max.
 - Added the dry-run-first research ingestion CLI. This prepares repository updates from external email research but does not connect Gmail or claim an automated email-to-GitHub write path.
+
+## July 30, 2026 recovery backfill
+
+- Live GitHub inspection confirmed that the earlier one-time retries had not created a backfill branch or pull request and that `main` still ended with July 16 research.
+- Reopened eight direct listing sources and added `L-015` through `L-023`. The owner-direct 76105 Facebook studio is retained as explicitly unverified because the direct post could not be opened; it must not be presented as actionable.
+- Corrected Furnished Finder property `816590_7` from the handoff's reported “Unit 617” label to the current source title, **Axis Waterfront 1018**.
+- Preserved the low-cost but limited comparisons: 1115 S Jennings Unit 11 is no-dog and 12-month-only; Bryan Flats uses a shared full kitchen and has an unresolved two-dog conflict; CoHo and Axis are over the stretch budget.
+- Replaced the shared generic Zillow search URL on `L-005` and `L-006` with distinct official property URLs, eliminating the pre-existing normalized-source collision while preserving both stable IDs and their histories.
+- Added reconciliation log `S-005` and refreshed coverage for Hulen, West Arlington, Near Southside, owner-direct channels, and Eastchase.
+- GitHub connector permissions are now verified as admin/push capable. The July 16 HTTP 403 note is historical and no longer describes the active connection.
+- Gmail outbound capability was proven by a controlled self-delivery from Aaron's authenticated account and independent Sent-folder verification. No test message was sent to Erica.
+- Publication remains subject to a data-only pull request, duplicate and history checks, repository validation, successful GitHub checks, merge verification on `main`, and deployed-dashboard verification.
