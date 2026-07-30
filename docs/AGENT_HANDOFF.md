@@ -98,3 +98,11 @@ The rental watch runs four times daily at approximately 8:00 a.m., 1:00 p.m., 6:
 - GitHub connector permissions are now verified as admin/push capable. The July 16 HTTP 403 note is historical and no longer describes the active connection.
 - Gmail outbound capability was proven by a controlled self-delivery from Aaron's authenticated account and independent Sent-folder verification. No test message was sent to Erica.
 - Publication remains subject to a data-only pull request, duplicate and history checks, repository validation, successful GitHub checks, merge verification on `main`, and deployed-dashboard verification.
+
+## July 30, 2026 evening rental-watch update
+
+- Added `L-024`, an available owner-direct backyard tiny house at 1404 Sunny Glen St for $950 all bills paid.
+- Verified a private kitchenette, $950 deposit, direct landlord contact, and a six-month lease across current Apartments.com, Realtor.com, TurboTenant, and RentalSource syndication.
+- The listing allows pets only with approval and charges a $300 nonrefundable deposit per pet; two small dogs remain unconfirmed.
+- The unit is treated as an unfurnished fallback and its typical commute to 1400 8th Ave remains a verification item near the 20-minute ceiling.
+- Updated the Crowley coverage record and appended search log `S-006`.
