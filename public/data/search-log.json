@@ -1,5 +1,17 @@
 [
   {
+    "id": "S-006",
+    "searchedAt": "2026-07-30T17:57:31-05:00",
+    "area": "South Fort Worth / Crowley edge",
+    "platform": "Apartments.com + Realtor.com + TurboTenant + RentalSource + multi-platform web search",
+    "query": "Furnished-rental, owner-direct, sublet and private-kitchen inventory near $1,000 within a 20-minute commute of 1400 8th Ave",
+    "reviewed": 24,
+    "qualified": 1,
+    "outcome": "Found an available $950 all-bills-paid backyard tiny house with a private kitchenette, direct landlord contact and a confirmed six-month lease. It remains an unfurnished fallback pending written approval for two small dogs and shift-time commute confirmation.",
+    "nextSearch": "Call the landlord to confirm both dogs, fees, furnishings and shift-time commute; continue monitoring close-in furnished private-kitchen inventory.",
+    "agent": "ChatGPT"
+  },
+  {
     "id": "S-005",
     "searchedAt": "2026-07-30T08:30:00-05:00",
     "area": "Fort Worth citywide / Hulen / Eastchase / West Arlington / Medical District",
