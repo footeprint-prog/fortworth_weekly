@@ -12,6 +12,7 @@ import { LeadDrawer } from './components/LeadDrawer'
 import { FilterPanel } from './components/FilterPanel'
 import { OperationsView } from './components/OperationsView'
 import { petCategoryLabel, petPolicyCategory } from './lib/actionability'
+import { searchCriteria } from './config/searchCriteria'
 
 type View = 'leads' | 'operations'
 
@@ -104,8 +105,8 @@ export default function App() {
 
       <main id="top">
         <section className="hero">
-          <div><span className="eyebrow">Baylor All Saints · 1400 8th Ave</span><h1>Find the right Fort Worth home base.</h1><p>Furnished, dog-friendly housing with a private kitchen, ranked for value, privacy and commute.</p></div>
-          <div className="hero-budget"><span>Target all-in</span><strong>$1,000</strong><small>Stretch ceiling $1,150</small></div>
+          <div><span className="eyebrow">{searchCriteria.workDestinationLabel} · {searchCriteria.workAddressShort}</span><h1>Find the right Fort Worth home base.</h1><p>Furnished, dog-friendly housing with a private kitchen, ranked for value, privacy and a {searchCriteria.maxCommuteMinutes}-minute maximum commute.</p></div>
+          <div className="hero-budget"><span>Target all-in</span><strong>${searchCriteria.targetAllIn.toLocaleString()}</strong><small>Stretch ${searchCriteria.stretchAllIn.toLocaleString()} · commute ≤{searchCriteria.maxCommuteMinutes} min</small></div>
         </section>
 
         <section className="metric-strip" aria-label="Lead summary">
@@ -114,7 +115,7 @@ export default function App() {
           <Metric label="Promising" value={metrics.promising} />
           <Metric label="At budget" value={metrics.underBudget} />
           <Metric label="Shortlisted" value={metrics.favorites} />
-          <div className="search-cadence"><span className="pulse" /><div><strong>Search watch active</strong><span>3 scans daily · 8am, 1pm, 6pm CT</span></div></div>
+          <div className="search-cadence"><span className="pulse" /><div><strong>Search watch active</strong><span>{searchCriteria.searchCadenceLabel}</span></div></div>
         </section>
 
         {view === 'leads' ? (

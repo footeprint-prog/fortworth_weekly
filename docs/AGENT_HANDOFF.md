@@ -2,7 +2,7 @@
 
 ## Mission
 
-Find the highest-value furnished home base near Baylor Scott & White All Saints Medical Center, centered on approximately **$1,000 monthly all-in** with a stretch ceiling near **$1,150** for exceptional value.
+Find the highest-value furnished home base within a **20-minute commute** of Erica’s work destination at **1400 8th Ave, Fort Worth, TX 76104**, centered on approximately **$1,000 monthly all-in** with a stretch ceiling near **$1,150** for exceptional value.
 
 ## Primary qualification
 
@@ -11,6 +11,7 @@ Find the highest-value furnished home base near Baylor Scott & White All Saints 
 - Furnished is preferred for primary candidates. Clearly label unfurnished and partially furnished Plan B options and estimate minimal furnishing costs when practical.
 - Require a confirmed 3–6 month term, or at minimum a confirmed term under one year, for requirement-ready leads.
 - Require a verified direct listing/source URL and a usable verified contact or listing inquiry channel before presenting a lead as ready to contact.
+- Require an estimated typical commute of 20 minutes or less to 1400 8th Ave for requirement-ready leads. Longer commutes remain visible only as explicit fallbacks.
 
 No-dog, shared-kitchen, unfurnished, and 12-month-only options may remain visible as explicit comparisons. They must never rank as requirement-ready or promising pet-compatible inventory.
 
@@ -30,7 +31,7 @@ Record the normalized priority in `unitCategory` rather than relying on free-tex
 ## Search guidance
 
 - Record parking but do not use it as a hard filter.
-- Search up to roughly 40 minutes from 1400 8th Ave, Fort Worth.
+- Search within a 20-minute typical commute of 1400 8th Ave, Fort Worth, TX 76104. Retain unusually strong results beyond that limit only as clearly labeled commute fallbacks.
 - Always calculate likely all-in monthly cost; headline rent alone is insufficient.
 - Preserve rejected leads when they teach something useful, with a dated reason.
 - Separate specific listings from inventory/search pools.
