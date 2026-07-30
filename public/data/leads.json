@@ -1550,5 +1550,74 @@
         "note": "Added as a shared-kitchen fallback after reconciling Travel Nurse Housing, current market inventory, and fee-policy sources."
       }
     ]
+  },
+  {
+    "id": "L-024",
+    "address": "1404 Sunny Glen St, Fort Worth, TX 76134",
+    "mandatoryFeesMonthly": 0,
+    "parkingCostMonthly": 0,
+    "upfrontCosts": "$950 refundable security deposit plus $300 nonrefundable pet deposit per approved pet ($1,550 total upfront for two approved dogs, before any application fee not published).",
+    "leaseTermMinMonths": 6,
+    "leaseTermMaxMonths": 6,
+    "leaseTermCategory": "3-6-month-confirmed",
+    "sublet": false,
+    "leaseTakeover": false,
+    "ownerDirect": true,
+    "contactVerified": true,
+    "sourceVerified": true,
+    "title": "All-bills-paid backyard tiny house",
+    "area": "South Fort Worth / Crowley edge",
+    "propertyType": "Detached backyard tiny house",
+    "unitCategory": "guest-house",
+    "privacy": "entire-unit",
+    "monthlyRent": 950,
+    "utilitiesMonthly": 0,
+    "utilitiesIncluded": true,
+    "petCostMonthly": 0,
+    "petDeposit": 300,
+    "estimatedAllIn": 950,
+    "kitchen": "kitchenette",
+    "kitchenDetails": "Private kitchenette explicitly lists a two-burner stove, kitchen sink, and small refrigerator.",
+    "furnished": false,
+    "petPolicy": "unknown",
+    "petDetails": "Pets are allowed subject to landlord approval; $300 nonrefundable deposit per pet. Two small dogs are not yet individually confirmed.",
+    "parking": "Outdoor/on-site parking reported by syndicated listing; no monthly parking charge published.",
+    "minStay": "6 months confirmed",
+    "availability": "Available now as of July 30, 2026; Apartments.com and Realtor both show current availability.",
+    "availableFrom": "2026-07-30",
+    "commuteMinutes": 20,
+    "contactName": "Jose Cabello",
+    "contactMethod": "Direct landlord phone or Apartments.com listing inquiry",
+    "phone": "817-353-0163",
+    "email": "",
+    "sourceName": "Apartments.com / TurboTenant syndication",
+    "sourceUrl": "https://www.apartments.com/1404-sunny-glen-st-fort-worth-tx/gkvmmfz/",
+    "lastChecked": "2026-07-30",
+    "status": "investigate",
+    "confidence": "high",
+    "priority": "high",
+    "nextAction": "Call Jose to confirm both small dogs, exact commute at Erica's shift time, whether any furnishings remain, application fee, parking arrangement, and the earliest move-in date; tour before paying.",
+    "notes": "Meaningful new owner-direct lead at the target budget. Private kitchenette, utilities, six-month term, and current availability are verified. It is an unfurnished fallback and cannot be called requirement-ready until both dogs and the typical work commute are confirmed.",
+    "verificationGaps": [
+      "Written approval for two small dogs",
+      "Typical commute at Erica's shift time",
+      "Application or screening fee",
+      "Exact parking arrangement",
+      "Whether any furnishings are included"
+    ],
+    "tags": [
+      "all bills paid",
+      "private kitchenette",
+      "six-month term",
+      "owner direct",
+      "pets require approval",
+      "unfurnished fallback"
+    ],
+    "history": [
+      {
+        "date": "2026-07-30",
+        "note": "Added after fresh multi-source verification. Apartments.com showed available now at $950 with a $950 deposit and private kitchenette; Realtor exposed a six-month lease; RentalSource published landlord contact and $300 pet deposit per approved pet."
+      }
+    ]
   }
 ]
