@@ -7,7 +7,7 @@ const baseLead: Lead = {
   address: '123 Main St', monthlyRent: 1000, mandatoryFeesMonthly: 0, utilitiesMonthly: 0, utilitiesIncluded: true, petCostMonthly: 0, petDeposit: 0, parkingCostMonthly: 0,
   estimatedAllIn: 1000, upfrontCosts: 'None', kitchen: 'full', kitchenDetails: 'Full kitchen', furnished: true,
   petPolicy: 'confirmed', petDetails: 'Two dogs allowed', parking: 'Driveway', minStay: '3 months', leaseTermMinMonths: 3, leaseTermMaxMonths: 6, leaseTermCategory: 'confirmed-3-6', sublet: false, leaseTakeover: false, ownerDirect: true,
-  availability: 'Available', availableFrom: null, commuteMinutes: 24, contactName: 'Host', contactMethod: 'Listing inquiry', phone: '', email: '',
+  availability: 'Available', availableFrom: null, commuteMinutes: 18, contactName: 'Host', contactMethod: 'Listing inquiry', phone: '', email: '',
   sourceName: 'Test', sourceUrl: 'https://example.com/listing/1', contactVerified: true, sourceVerified: true, lastChecked: '2026-07-16', status: 'new', confidence: 'high', priority: 'high',
   nextAction: '', notes: '', verificationGaps: [], tags: [], history: [],
 }
@@ -55,6 +55,13 @@ describe('lead scoring', () => {
       expect(assessment.fit).toBe('fallback')
       expect(assessment.score).toBeLessThanOrEqual(55)
     }
+  })
+
+  it('keeps listings beyond Erica’s 20-minute commute limit visible only as fallbacks', () => {
+    const assessment = assessLead({ ...baseLead, commuteMinutes: 21 })
+    expect(assessment.fit).toBe('fallback')
+    expect(assessment.score).toBeLessThanOrEqual(55)
+    expect(assessment.hardRequirementFailures).toContain('Commute exceeds the 20-minute maximum')
   })
 
   it('does not call an otherwise strong lead actionable without verified contact', () => {

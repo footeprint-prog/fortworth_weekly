@@ -1,4 +1,5 @@
 import type { Lead, UnitCategory } from '../types'
+import { searchCriteria } from '../config/searchCriteria'
 import { hasDirectSource, hasUsableContact, isActionable } from './actionability'
 
 export type FitTier = 'qualified' | 'promising' | 'research' | 'fallback' | 'disqualified'
@@ -59,8 +60,9 @@ export function assessLead(lead: Lead): LeadAssessment {
   if (!hasDirectSource(lead) || !lead.sourceVerified) verificationWarnings.push('Direct listing URL is missing or unverified')
   if (!hasUsableContact(lead) || !lead.contactVerified) verificationWarnings.push('Direct contact or inquiry channel is missing or unverified')
   if (total === null) verificationWarnings.push('All-in monthly cost is unverified')
-  if (total !== null && total > 1150) verificationWarnings.push('Estimated all-in cost exceeds the stretch target')
+  if (total !== null && total > searchCriteria.stretchAllIn) verificationWarnings.push('Estimated all-in cost exceeds the stretch target')
   if (lead.commuteMinutes === null) verificationWarnings.push('Commute has not been verified')
+  else if (lead.commuteMinutes > searchCriteria.maxCommuteMinutes) hardRequirementFailures.push(`Commute exceeds the ${searchCriteria.maxCommuteMinutes}-minute maximum`)
   if (lead.privacy === 'inventory-pool' || lead.unitCategory === 'inventory-pool') verificationWarnings.push('This is a search pool, not a specific available unit')
 
   let score = breakdown.reduce((sum, item) => sum + item.points, 0)
@@ -68,7 +70,7 @@ export function assessLead(lead: Lead): LeadAssessment {
   if (lead.status === 'plan-b') score -= 3
   if (lead.status === 'market-benchmark') score -= 6
   if (lead.status === 'search-pool') score -= 8
-  if (lead.petPolicy === 'not-allowed' || lead.kitchen === 'shared' || lead.furnished === false || lead.leaseTermCategory === '12-plus') score = Math.min(score, 55)
+  if (lead.petPolicy === 'not-allowed' || lead.kitchen === 'shared' || lead.furnished === false || lead.leaseTermCategory === '12-plus' || (lead.commuteMinutes !== null && lead.commuteMinutes > searchCriteria.maxCommuteMinutes)) score = Math.min(score, 55)
   if (lead.kitchen === 'none') score = Math.min(score, 20)
   if (!isActionable(lead)) score = Math.min(score, 69)
   if (lead.privacy === 'inventory-pool' || lead.unitCategory === 'inventory-pool') score = Math.min(score, 45)
@@ -102,7 +104,7 @@ export function formatMoney(value: number | null): string {
 
 function determineFit(lead: Lead, score: number): FitTier {
   if (lead.status === 'rejected' || lead.kitchen === 'none') return 'disqualified'
-  if (lead.petPolicy === 'not-allowed' || lead.kitchen === 'shared' || lead.furnished === false || lead.leaseTermCategory === '12-plus' || lead.status === 'plan-b') return 'fallback'
+  if (lead.petPolicy === 'not-allowed' || lead.kitchen === 'shared' || lead.furnished === false || lead.leaseTermCategory === '12-plus' || (lead.commuteMinutes !== null && lead.commuteMinutes > searchCriteria.maxCommuteMinutes) || lead.status === 'plan-b') return 'fallback'
   if (lead.status === 'search-pool' || lead.unitCategory === 'inventory-pool' || lead.privacy === 'inventory-pool') return 'research'
   if (lead.petPolicy !== 'confirmed' || lead.kitchen === 'unknown' || lead.furnished === null || lead.leaseTermCategory === 'unknown' || !isActionable(lead)) return 'research'
   if (lead.leaseTermCategory === 'flexible') return score >= 62 ? 'promising' : 'research'
@@ -111,8 +113,8 @@ function determineFit(lead: Lead, score: number): FitTier {
 
 function budgetComponent(total: number | null): ScoreComponent {
   if (total === null) return component('budget', 'Budget value', 3, 20, 'All-in total unknown')
-  if (total <= 1000) return component('budget', 'Budget value', 20, 20, 'At or below the $1,000 target')
-  if (total <= 1150) return component('budget', 'Budget value', 15, 20, 'Within the stretch range')
+  if (total <= searchCriteria.targetAllIn) return component('budget', 'Budget value', 20, 20, `At or below the $${searchCriteria.targetAllIn.toLocaleString()} target`)
+  if (total <= searchCriteria.stretchAllIn) return component('budget', 'Budget value', 15, 20, 'Within the stretch range')
   if (total <= 1300) return component('budget', 'Budget value', 7, 20, 'Above the stretch range')
   if (total <= 1500) return component('budget', 'Budget value', 2, 20, 'Materially above target')
   return component('budget', 'Budget value', 0, 20, 'Far above target')
@@ -145,10 +147,8 @@ function leaseTermComponent(lead: Lead): ScoreComponent {
 function housingTypeComponent(lead: Lead): ScoreComponent { return component('housing-type', 'Housing type', categoryPoints[lead.unitCategory], 10, categoryLabels[lead.unitCategory]) }
 function commuteComponent(minutes: number | null): ScoreComponent {
   if (minutes === null) return component('commute', 'Commute', 1, 5, 'Commute unverified')
-  if (minutes <= 20) return component('commute', 'Commute', 5, 5, 'Excellent commute')
-  if (minutes <= 30) return component('commute', 'Commute', 4, 5, 'Preferred commute range')
-  if (minutes <= 40) return component('commute', 'Commute', 2, 5, 'Acceptable for strong value')
-  return component('commute', 'Commute', 0, 5, 'Outside preferred radius')
+  if (minutes <= searchCriteria.maxCommuteMinutes) return component('commute', 'Commute', 5, 5, `Within the ${searchCriteria.maxCommuteMinutes}-minute commute limit`)
+  return component('commute', 'Commute', 0, 5, `Exceeds the ${searchCriteria.maxCommuteMinutes}-minute commute limit`)
 }
 function actionabilityComponent(lead: Lead): ScoreComponent {
   const source = hasDirectSource(lead) && lead.sourceVerified

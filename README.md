@@ -1,6 +1,6 @@
 # Fort Worth Premium Housing Locator
 
-A production-oriented decision-support dashboard for finding furnished, dog-friendly housing near Baylor Scott & White All Saints Medical Center in Fort Worth.
+A production-oriented decision-support dashboard for finding furnished, dog-friendly housing within a 20-minute commute of Erica’s work destination at 1400 8th Ave in Fort Worth.
 
 ## Product capabilities
 
