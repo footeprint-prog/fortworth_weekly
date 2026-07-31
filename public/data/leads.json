@@ -1559,7 +1559,7 @@
     "upfrontCosts": "$950 refundable security deposit plus $300 nonrefundable pet deposit per approved pet ($1,550 total upfront for two approved dogs, before any application fee not published).",
     "leaseTermMinMonths": 6,
     "leaseTermMaxMonths": 6,
-    "leaseTermCategory": "3-6-month-confirmed",
+    "leaseTermCategory": "confirmed-3-6",
     "sublet": false,
     "leaseTakeover": false,
     "ownerDirect": true,
@@ -1617,6 +1617,10 @@
       {
         "date": "2026-07-30",
         "note": "Added after fresh multi-source verification. Apartments.com showed available now at $950 with a $950 deposit and private kitchenette; Realtor exposed a six-month lease; RentalSource published landlord contact and $300 pet deposit per approved pet."
+      },
+      {
+        "date": "2026-07-31",
+        "note": "Normalized the lease-term category to the dashboard's supported confirmed-3-6 value; the confirmed six-month lease facts are unchanged."
       }
     ]
   },
@@ -1703,7 +1707,7 @@
     "upfrontCosts": "$1,000 refundable security deposit plus $58 application fee per applicant ($1,058 minimum upfront before first rent).",
     "leaseTermMinMonths": 12,
     "leaseTermMaxMonths": 12,
-    "leaseTermCategory": "12-month-only",
+    "leaseTermCategory": "12-plus",
     "sublet": false,
     "leaseTakeover": false,
     "ownerDirect": false,
@@ -1762,6 +1766,10 @@
       {
         "date": "2026-07-31",
         "note": "Added as a dogs-not-allowed, 12-month-only comparison after current Apartments.com and NTREIS-derived sources confirmed price, furnishing, kitchenette limits, parking, fees and agent contact."
+      },
+      {
+        "date": "2026-07-31",
+        "note": "Normalized the lease-term category to the dashboard's supported 12-plus value; the 12-month-only rejection remains unchanged."
       }
     ]
   },
