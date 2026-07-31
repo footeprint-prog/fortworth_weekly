@@ -114,3 +114,12 @@ The rental watch runs four times daily at approximately 8:00 a.m., 1:00 p.m., 6:
 - Kept the lead in **pet policy unclear / confirmation required** because an older syndication says no pets and the current listing does not explicitly approve two dogs or publish pet fees.
 - Marked the room as a shared-kitchen/shared-bath fallback with an unconfirmed lease term; it is not requirement-ready despite the close commute and target-budget price.
 - Appended search log `S-007` and refreshed Medical District / Near Southside coverage.
+
+## July 31, 2026 morning rental-watch update
+
+- Added `L-026`, a furnished garage studio at 3531 Bellaire Dr S advertised at $1,000 with covered parking and a private kitchenette.
+- Classified it in **dogs not allowed** and as **12-month-only** after reconciling Apartments.com with NTREIS-derived Realtor.com, Redfin, Homes.com, Compass, and brokerage records.
+- The kitchenette has a refrigerator but no stove or oven; it is not a full functional kitchen for the primary requirement.
+- Recorded the $1,000 refundable deposit, $58 application fee, agent Angela Culpepper at 817-522-6713, and an estimated 10-minute commute.
+- Kept the lead as a rejected price benchmark, not an actionable recommendation, because it fails the dog and lease-term requirements.
+- Appended search log `S-008` and refreshed Hulen / Southwest Fort Worth coverage.
