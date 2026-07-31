@@ -1619,5 +1619,80 @@
         "note": "Added after fresh multi-source verification. Apartments.com showed available now at $950 with a $950 deposit and private kitchenette; Realtor exposed a six-month lease; RentalSource published landlord contact and $300 pet deposit per approved pet."
       }
     ]
+  },
+  {
+    "id": "L-025",
+    "address": "1469 Elmwood Ave, Fort Worth, TX 76104",
+    "mandatoryFeesMonthly": 0,
+    "parkingCostMonthly": 0,
+    "upfrontCosts": "$1,050 refundable security deposit. Application/screening fee and pet charges are not published.",
+    "leaseTermMinMonths": null,
+    "leaseTermMaxMonths": null,
+    "leaseTermCategory": "unknown",
+    "sublet": false,
+    "leaseTakeover": false,
+    "ownerDirect": true,
+    "contactVerified": true,
+    "sourceVerified": true,
+    "title": "Furnished Elmwood room with utilities",
+    "area": "Hillside / Morningside / Near Southside",
+    "propertyType": "Furnished room in owner-occupied/shared house",
+    "unitCategory": "private-room",
+    "privacy": "private-room",
+    "monthlyRent": 1050,
+    "utilitiesMonthly": 0,
+    "utilitiesIncluded": true,
+    "petCostMonthly": null,
+    "petDeposit": null,
+    "estimatedAllIn": 1050,
+    "kitchen": "shared",
+    "kitchenDetails": "Shared full kitchen access is indicated by the listed dishwasher, range/oven, microwave, refrigerator, freezer and garbage disposal; no private kitchenette.",
+    "furnished": true,
+    "petPolicy": "unknown",
+    "petDetails": "Current Apartments.com and July 1 Craigslist/TurboTenant syndication advertise small dogs and cats. An older HotPads syndication says no pets, and neither current source confirms two dogs or pet fees; written confirmation is required.",
+    "parking": "Off-street parking was reported by an older syndication; current listing does not specify parking or a fee.",
+    "minStay": "Contact landlord; exact lease length is not published",
+    "availability": "Available now; current Apartments.com page and July 1 owner-direct post show availability.",
+    "availableFrom": "2026-07-01",
+    "commuteMinutes": 10,
+    "contactName": "Owner / TurboTenant landlord",
+    "contactMethod": "Call the published listing number, use Apartments.com inquiry, or submit the TurboTenant prescreener",
+    "phone": "682-841-5137",
+    "email": "",
+    "sourceName": "Apartments.com / owner-direct TurboTenant syndication",
+    "sourceUrl": "https://www.apartments.com/1469-elmwood-ave-fort-worth-tx/4v8d5gh/",
+    "lastChecked": "2026-07-30",
+    "status": "investigate",
+    "confidence": "medium",
+    "priority": "medium",
+    "nextAction": "Call before applying to confirm two small dogs, all pet fees, a 3–6 month lease, shared bathroom and kitchen rules, parking, current $1,050 price, and the identity/authority of the landlord.",
+    "notes": "Meaningful close-in furnished fallback at the target budget with utilities included and a fenced yard. It is not requirement-ready because the kitchen and bathroom are shared, the lease term is unconfirmed, and pet syndications conflict.",
+    "verificationGaps": [
+      "Written approval for two small dogs",
+      "Pet deposits and monthly pet rent",
+      "Confirmed 3–6 month lease",
+      "Shared bathroom arrangement",
+      "Kitchen storage and cooking access",
+      "Current parking arrangement",
+      "Application or screening fee",
+      "Reconcile older no-pet syndication"
+    ],
+    "tags": [
+      "furnished room",
+      "utilities included",
+      "shared kitchen",
+      "shared bathroom",
+      "small dogs advertised",
+      "pet conflict",
+      "unconfirmed term",
+      "close commute",
+      "owner direct"
+    ],
+    "history": [
+      {
+        "date": "2026-07-30",
+        "note": "Added after current Apartments.com and owner-direct Craigslist/TurboTenant verification. Classified as pet-policy confirmation required because current small-dog language conflicts with an older no-pet syndication and does not confirm two dogs."
+      }
+    ]
   }
 ]
