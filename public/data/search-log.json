@@ -1,5 +1,17 @@
 [
   {
+    "id": "S-008",
+    "searchedAt": "2026-07-31T08:06:04-05:00",
+    "area": "TCU / Westcliff / Southwest Fort Worth",
+    "platform": "Apartments.com + NTREIS MLS syndication + Zillow + Furnished Finder + Craigslist + owner-direct web search",
+    "query": "Current furnished garages, studios, ADUs, sublets and owner-direct rentals near $1,000 within 20 minutes of 1400 8th Ave",
+    "reviewed": 34,
+    "qualified": 1,
+    "outcome": "Verified a $1,000 furnished garage studio with private kitchenette and covered parking near the medical district. It is a dogs-not-allowed, 12-month-only benchmark and not actionable for Erica.",
+    "nextSearch": "Continue looking for the same garage-studio price and proximity with two-dog approval and a 3–6 month term; prioritize a functional cooktop.",
+    "agent": "ChatGPT"
+  },
+  {
     "id": "S-007",
     "searchedAt": "2026-07-30T22:02:44-05:00",
     "area": "Medical District / Near Southside / 76104",
