@@ -123,3 +123,13 @@ The rental watch runs four times daily at approximately 8:00 a.m., 1:00 p.m., 6:
 - Recorded the $1,000 refundable deposit, $58 application fee, agent Angela Culpepper at 817-522-6713, and an estimated 10-minute commute.
 - Kept the lead as a rejected price benchmark, not an actionable recommendation, because it fails the dog and lease-term requirements.
 - Appended search log `S-008` and refreshed Hulen / Southwest Fort Worth coverage.
+
+
+## July 31, 2026 midday rental-watch update
+
+- Added `L-027`, distinct conventional Axis Waterfront studio inventory at 5301 Overton Ridge Blvd, with two studios advertised available now from $800.
+- Verified a private full kitchen, a six-month minimum lease, an estimated 18-minute commute, and a community policy allowing two dogs.
+- Published costs are $20 monthly pet rent, a $200 refundable pet deposit, and a $200 nonrefundable one-time pet fee per dog; surface parking is advertised at $25 monthly.
+- Estimated the monthly total at approximately $1,045 using $800 rent, $40 for two dogs, $25 parking and a $180 utility allowance. Exact utilities and any unlisted mandatory charges require a written quote.
+- Marked the lead as an unfurnished conventional Plan B because the specific $800 studios are not confirmed furnished. Kept it separate from `L-016`, the property's distinct $1,630 furnished corporate unit.
+- Appended search log `S-009` and refreshed Hulen / Southwest Fort Worth coverage.
