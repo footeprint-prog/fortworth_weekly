@@ -133,3 +133,10 @@ The rental watch runs four times daily at approximately 8:00 a.m., 1:00 p.m., 6:
 - Estimated the monthly total at approximately $1,045 using $800 rent, $40 for two dogs, $25 parking and a $180 utility allowance. Exact utilities and any unlisted mandatory charges require a written quote.
 - Marked the lead as an unfurnished conventional Plan B because the specific $800 studios are not confirmed furnished. Kept it separate from `L-016`, the property's distinct $1,630 furnished corporate unit.
 - Appended search log `S-009` and refreshed Hulen / Southwest Fort Worth coverage.
+
+
+## July 31, 2026 dashboard data-integrity repair
+
+- Restored dashboard loading after two unsupported lease-category aliases caused runtime validation to reject the complete lead database.
+- Normalized `L-024` from `3-6-month-confirmed` to `confirmed-3-6` and `L-026` from `12-month-only` to `12-plus`.
+- Preserved the underlying six-month and 12-month-only facts, notes, rejection status, stable IDs, source URLs, and full prior history.
