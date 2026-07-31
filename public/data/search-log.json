@@ -1,5 +1,17 @@
 [
   {
+    "id": "S-007",
+    "searchedAt": "2026-07-30T22:02:44-05:00",
+    "area": "Medical District / Near Southside / 76104",
+    "platform": "Apartments.com + Craigslist/TurboTenant + Furnished Finder + Zillow + owner-direct multi-platform web search",
+    "query": "Current furnished, owner-direct and sublet inventory near $1,000 with private kitchen preference, small dogs, 3–6 months and a 20-minute commute to 1400 8th Ave",
+    "reviewed": 31,
+    "qualified": 1,
+    "outcome": "Found a newly updated $1,050 furnished 76104 room with utilities included, current small-dog language and direct inquiry methods. It remains a shared-kitchen/shared-bath fallback with conflicting pet syndication and unconfirmed lease length.",
+    "nextSearch": "Contact the Elmwood landlord to verify two dogs, pet fees, 3–6 month terms, shared-space rules and parking; continue prioritizing private-kitchen entire units.",
+    "agent": "ChatGPT"
+  },
+  {
     "id": "S-006",
     "searchedAt": "2026-07-30T17:57:31-05:00",
     "area": "South Fort Worth / Crowley edge",

@@ -106,3 +106,11 @@ The rental watch runs four times daily at approximately 8:00 a.m., 1:00 p.m., 6:
 - The listing allows pets only with approval and charges a $300 nonrefundable deposit per pet; two small dogs remain unconfirmed.
 - The unit is treated as an unfurnished fallback and its typical commute to 1400 8th Ave remains a verification item near the 20-minute ceiling.
 - Updated the Crowley coverage record and appended search log `S-006`.
+
+## July 30, 2026 late-evening rental-watch update
+
+- Added `L-025`, a close-in furnished room at 1469 Elmwood Ave advertised at $1,050 with utilities included and current small-dog language.
+- Verified direct Apartments.com and owner-posted Craigslist/TurboTenant inquiry paths; the current source lists phone 682-841-5137 and a $1,050 deposit.
+- Kept the lead in **pet policy unclear / confirmation required** because an older syndication says no pets and the current listing does not explicitly approve two dogs or publish pet fees.
+- Marked the room as a shared-kitchen/shared-bath fallback with an unconfirmed lease term; it is not requirement-ready despite the close commute and target-budget price.
+- Appended search log `S-007` and refreshed Medical District / Near Southside coverage.
