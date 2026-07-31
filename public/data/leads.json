@@ -1764,5 +1764,74 @@
         "note": "Added as a dogs-not-allowed, 12-month-only comparison after current Apartments.com and NTREIS-derived sources confirmed price, furnishing, kitchenette limits, parking, fees and agent contact."
       }
     ]
+  },
+  {
+    "id": "L-027",
+    "title": "Axis Waterfront conventional studio inventory",
+    "area": "Hulen / Southwest Fort Worth",
+    "propertyType": "Conventional studio apartment",
+    "unitCategory": "conventional-apartment",
+    "privacy": "entire-unit",
+    "address": "5301 Overton Ridge Blvd, Fort Worth, TX 76132",
+    "monthlyRent": 800,
+    "mandatoryFeesMonthly": 0,
+    "utilitiesMonthly": 180,
+    "utilitiesIncluded": false,
+    "petCostMonthly": 40,
+    "petDeposit": 400,
+    "parkingCostMonthly": 25,
+    "estimatedAllIn": 1045,
+    "upfrontCosts": "Estimated $1,225–$1,325 before first month's rent: $75 application fee, $100 administration fee, $250–$350 security deposit, $400 refundable pet deposits for two dogs, and $400 nonrefundable one-time pet fees for two dogs.",
+    "kitchen": "full",
+    "kitchenDetails": "Private residential kitchen; current community sources advertise a refrigerator, range/oven, microwave, dishwasher and disposal. Verify the exact $800 studio's appliance package.",
+    "furnished": false,
+    "petPolicy": "confirmed",
+    "petDetails": "Community policy allows up to two dogs, including small dogs. Published costs are $20 monthly pet rent, $200 refundable pet deposit, and $200 one-time nonrefundable pet fee per dog; breed rules should still be confirmed.",
+    "parking": "Surface parking is advertised at $25 per month; verify availability and whether the fee is mandatory for Erica.",
+    "minStay": "6 months",
+    "leaseTermMinMonths": 6,
+    "leaseTermMaxMonths": 14,
+    "leaseTermCategory": "confirmed-3-6",
+    "sublet": false,
+    "leaseTakeover": false,
+    "ownerDirect": false,
+    "availability": "Zillow showed studios 1303 and 511 available now at $800 on July 31, 2026; several additional studios and one-bedrooms were also listed.",
+    "availableFrom": "2026-07-31",
+    "commuteMinutes": 18,
+    "contactName": "Axis Waterfront leasing office",
+    "contactMethod": "Call the official leasing office or use the official property-site tour/application inquiry",
+    "phone": "866-498-9341",
+    "email": "",
+    "sourceName": "Zillow building inventory; Axis Waterfront official site",
+    "sourceUrl": "https://www.zillow.com/apartments/fort-worth-tx/fort-worth-tx-apartments/5XkdZk/",
+    "contactVerified": true,
+    "sourceVerified": true,
+    "lastChecked": "2026-07-31",
+    "status": "plan-b",
+    "confidence": "high",
+    "priority": "high",
+    "nextAction": "Call for a written six-month quote on studios 1303 or 511, confirm the complete utility/mandatory-fee total, and ask whether either $800 unit can be furnished and at what premium.",
+    "notes": "Meaningful under-budget conventional fallback with a confirmed six-month term, private full kitchen, two-dog capacity and an estimated 18-minute commute. The $800 units are not confirmed furnished; the separate L-016 Furnished Finder unit at this property remains a distinct $1,630 furnished monthly listing.",
+    "verificationGaps": [
+      "Whether the specific $800 studio is furnished or the furnishing premium",
+      "Exact utilities and any unlisted mandatory monthly charges",
+      "Breed restrictions for both dogs",
+      "Exact security-deposit tier",
+      "Shift-time commute and parking terms"
+    ],
+    "tags": [
+      "two dogs confirmed",
+      "six-month lease",
+      "full kitchen",
+      "unfurnished plan B",
+      "within commute",
+      "under budget before utilities"
+    ],
+    "history": [
+      {
+        "date": "2026-07-31",
+        "note": "Added as distinct conventional inventory after current Zillow, official property, Apartments.com, Homes.com and Apartment Finder sources verified $800 studios, six-month terms and a two-dog policy. Kept separate from L-016's specific furnished corporate unit."
+      }
+    ]
   }
 ]
