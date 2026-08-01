@@ -159,3 +159,13 @@ The rental watch runs four times daily at approximately 8:00 a.m., 1:00 p.m., 6:
 - Current sources advertise dogs/small dogs but do not confirm two dogs or publish all pet charges. Recorded the published $350 pet deposit and retained two-dog approval as a required written confirmation.
 - Estimated monthly cost at about $1,044 using $800 rent, $49 resident-benefits package, $64 required internet, $11.99 utility-management fee and a $120 utility allowance; administrative and second-pet charges remain unknown.
 - Appended search log `S-011` and refreshed Medical District / Near Southside coverage.
+
+
+## August 1, 2026 midday rental-watch update
+
+- Added `L-029`, a newly updated $1,000 furnished private suite in South Fort Worth near Huguley Hospital.
+- Verified utilities included, a private bathroom, free on-premises parking, a one-month minimum, a $500 refundable deposit, a $70 cleaning fee and a direct Furnished Finder inquiry method.
+- The current house rules advertise pets, but two small dogs and all pet charges require written confirmation.
+- Classified it as a **shared-kitchen fallback**, not requirement-ready; the exact address is withheld and the estimated 19-minute commute requires verification.
+- A 3–6 month stay appears possible under the one-month minimum but exact dates and the maximum term remain unconfirmed.
+- Appended search log `S-012` and refreshed Burleson corridor coverage.
