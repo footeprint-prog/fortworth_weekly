@@ -149,3 +149,13 @@ The rental watch runs four times daily at approximately 8:00 a.m., 1:00 p.m., 6:
 - Preserved the confirmed three-month minimum, private full kitchen, furnishings, utilities, five-minute commute and stable Furnished Finder source.
 - Estimated the monthly total at $1,520 using $1,495 rent plus the Furnished Finder $25 monthly pet charge, before any parking cost.
 - Appended search log `S-010` and refreshed Medical District / Near Southside coverage.
+
+
+## August 1, 2026 morning rental-watch update
+
+- Added `L-028`, a currently available garage efficiency at 3333 W 6th St Unit G reduced to $800 on July 14.
+- Verified a private gas-stove kitchen, off-street parking, published management contact, and an estimated eight-minute commute through current Zillow, Apartments.com, NTREIS-derived and RentalSource records.
+- Classified it as an **unfurnished, 12-month-only Plan B**; it is not requirement-ready under Erica's furnished 3–6 month preference.
+- Current sources advertise dogs/small dogs but do not confirm two dogs or publish all pet charges. Recorded the published $350 pet deposit and retained two-dog approval as a required written confirmation.
+- Estimated monthly cost at about $1,044 using $800 rent, $49 resident-benefits package, $64 required internet, $11.99 utility-management fee and a $120 utility allowance; administrative and second-pet charges remain unknown.
+- Appended search log `S-011` and refreshed Medical District / Near Southside coverage.
