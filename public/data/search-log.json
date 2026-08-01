@@ -1,5 +1,17 @@
 [
   {
+    "id": "S-011",
+    "searchedAt": "2026-08-01T07:56:13-05:00",
+    "area": "Cultural District / Arlington Heights / Medical District",
+    "platform": "Zillow + Apartments.com + NTREIS MLS syndication + RentalSource + Furnished Finder + Craigslist + owner-direct web search",
+    "query": "Current furnished, garage-apartment, ADU, sublet and conventional inventory near $1,000 with two dogs and a private kitchen within 20 minutes of 1400 8th Ave",
+    "reviewed": 32,
+    "qualified": 1,
+    "outcome": "Found a currently available W 6th garage efficiency reduced to $800 with a private gas-stove kitchen, dogs advertised and an estimated eight-minute commute. It is an unfurnished 12-month-only fallback; approval and complete charges for both dogs remain unconfirmed.",
+    "nextSearch": "Ask Specialized Property Management whether both small dogs, a 3–6 month term or furnishings can be approved; continue prioritizing furnished private-kitchen units under one year.",
+    "agent": "ChatGPT"
+  },
+  {
     "id": "S-010",
     "searchedAt": "2026-07-31T21:58:01-05:00",
     "area": "Medical District / Near Southside / 76104",

@@ -1845,5 +1845,78 @@
         "note": "Added as distinct conventional inventory after current Zillow, official property, Apartments.com, Homes.com and Apartment Finder sources verified $800 studios, six-month terms and a two-dog policy. Kept separate from L-016's specific furnished corporate unit."
       }
     ]
+  },
+  {
+    "id": "L-028",
+    "address": "3333 W 6th St Unit G, Fort Worth, TX 76107",
+    "mandatoryFeesMonthly": 124,
+    "parkingCostMonthly": 0,
+    "upfrontCosts": "At least $1,505 before first month's rent: $800 refundable security deposit, $65 application fee, $250 lease-processing fee, $350 published pet deposit, and $40 shared-utility setup fee. Administrative fee and any second-dog charge are not published; a deposit-alternative program may replace the cash deposit for additional fees.",
+    "leaseTermMinMonths": 12,
+    "leaseTermMaxMonths": 12,
+    "leaseTermCategory": "12-plus",
+    "sublet": false,
+    "leaseTakeover": false,
+    "ownerDirect": false,
+    "contactVerified": true,
+    "sourceVerified": true,
+    "title": "Cultural District W 6th garage efficiency",
+    "area": "Cultural District / Arlington Heights",
+    "propertyType": "Unfurnished garage efficiency apartment",
+    "unitCategory": "garage-apartment",
+    "privacy": "entire-unit",
+    "monthlyRent": 800,
+    "utilitiesMonthly": 120,
+    "utilitiesIncluded": false,
+    "petCostMonthly": null,
+    "petDeposit": 350,
+    "estimatedAllIn": 1044,
+    "kitchen": "full",
+    "kitchenDetails": "Private kitchen with a gas stove; current listing photos and description identify a self-contained efficiency apartment. Exact refrigerator and other appliance package should be confirmed.",
+    "furnished": false,
+    "petPolicy": "unknown",
+    "petDetails": "Current Zillow, Apartments.com and brokerage syndication allow cats and dogs/small dogs, but the number of dogs, breed or weight limits, monthly pet rent and any second-pet charges are not published. Written approval for both small dogs is required.",
+    "parking": "Off-street/on-site parking is advertised with no published monthly parking fee; verify the assigned space.",
+    "minStay": "12 months only",
+    "availability": "Current Zillow and MLS-derived sources show available now at $800 after a July 14, 2026 price reduction.",
+    "availableFrom": "2026-07-14",
+    "commuteMinutes": 8,
+    "contactName": "Garrett George / Specialized Property Management - DFW",
+    "contactMethod": "Call the published management number, use the Apartments.com inquiry, or request a self-showing through the listing",
+    "phone": "469-754-8195",
+    "email": "",
+    "sourceName": "Zillow / Apartments.com / NTREIS MLS syndication",
+    "sourceUrl": "https://www.zillow.com/homedetails/3333-W-6th-St-Fort-Worth-TX-76107/28925390_zpid/",
+    "lastChecked": "2026-08-01",
+    "status": "plan-b",
+    "confidence": "high",
+    "priority": "medium",
+    "nextAction": "Call before applying to confirm written approval and complete costs for both small dogs, exact utilities, all mandatory monthly charges, the current $800 rent, parking, and whether a shorter lease or furnished arrangement is negotiable.",
+    "notes": "Meaningful $95 price reduction from the February asking rent and a close-in private-kitchen garage-apartment fallback. It is not requirement-ready because it is unfurnished, published as a 12-month lease, and does not confirm two dogs. Estimated all-in uses $800 rent, $49 resident-benefits package, $64 required internet, $11.99 utility-management fee and a $120 utility allowance.",
+    "verificationGaps": [
+      "Written approval for two small dogs",
+      "Pet rent and second-pet charges",
+      "Actual gas, electric and shared-utility total",
+      "Administrative fee",
+      "Exact appliance package",
+      "Confirm off-street parking assignment",
+      "Whether 3–6 months or furnishings can be negotiated"
+    ],
+    "tags": [
+      "dogs advertised",
+      "two dogs unconfirmed",
+      "full kitchen",
+      "unfurnished plan B",
+      "12-month only",
+      "garage apartment",
+      "close commute",
+      "price reduction"
+    ],
+    "history": [
+      {
+        "date": "2026-08-01",
+        "note": "Added after current Zillow, Apartments.com, Coldwell Banker and RentalSource records confirmed a July 14 reduction to $800, private gas-stove kitchen, current availability, published management contact and 12-month lease. Kept as a two-dog-unconfirmed, unfurnished conventional fallback."
+      }
+    ]
   }
 ]
