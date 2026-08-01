@@ -1918,5 +1918,80 @@
         "note": "Added after current Zillow, Apartments.com, Coldwell Banker and RentalSource records confirmed a July 14 reduction to $800, private gas-stove kitchen, current availability, published management contact and 12-month lease. Kept as a two-dog-unconfirmed, unfurnished conventional fallback."
       }
     ]
+  },
+  {
+    "id": "L-029",
+    "address": "Exact address undisclosed; South Fort Worth near Huguley Hospital, Fort Worth, TX",
+    "mandatoryFeesMonthly": 0,
+    "parkingCostMonthly": 0,
+    "upfrontCosts": "$570 before first month's rent: $500 refundable deposit plus $70 cleaning fee. Application, screening and pet charges are not published.",
+    "leaseTermMinMonths": 1,
+    "leaseTermMaxMonths": null,
+    "leaseTermCategory": "flexible",
+    "sublet": false,
+    "leaseTakeover": false,
+    "ownerDirect": true,
+    "contactVerified": true,
+    "sourceVerified": true,
+    "title": "Private furnished suite near Huguley",
+    "area": "South Fort Worth / Huguley",
+    "propertyType": "Furnished private room with dedicated bathroom in shared home",
+    "unitCategory": "private-room",
+    "privacy": "private-room",
+    "monthlyRent": 1000,
+    "utilitiesMonthly": 0,
+    "utilitiesIncluded": true,
+    "petCostMonthly": null,
+    "petDeposit": null,
+    "estimatedAllIn": 1000,
+    "kitchen": "shared",
+    "kitchenDetails": "Shared household kitchen is advertised with kitchen essentials, a full-size refrigerator, microwave and dining table. The listing does not provide a private kitchenette.",
+    "furnished": true,
+    "petPolicy": "unknown",
+    "petDetails": "The current Furnished Finder house rules say pets are allowed, but the landlord does not publish a pet count, dog size or breed limits, deposits, or monthly pet rent. Written approval for both small dogs is required.",
+    "parking": "Free parking on the premises is advertised; exact space and vehicle rules should be confirmed.",
+    "minStay": "1 month minimum; 3–6 months appears possible but exact dates and maximum stay require landlord confirmation",
+    "availability": "Available; Furnished Finder calendar updated July 28, 2026.",
+    "availableFrom": "2026-07-28",
+    "commuteMinutes": 19,
+    "contactName": "Furnished Finder landlord",
+    "contactMethod": "Use the direct Furnished Finder booking inquiry or landlord message/call controls",
+    "phone": "",
+    "email": "",
+    "sourceName": "Furnished Finder",
+    "sourceUrl": "https://www.furnishedfinder.com/property/1020119_1",
+    "lastChecked": "2026-08-01",
+    "status": "investigate",
+    "confidence": "medium",
+    "priority": "medium",
+    "nextAction": "Message the landlord before paying or booking to confirm the exact address and shift-time commute, written approval and all charges for two small dogs, a 3–6 month stay, unrestricted shared-kitchen access and storage, household occupancy, laundry access, and parking.",
+    "notes": "Meaningful newly updated furnished fallback at the target all-in budget, with utilities, a private bathroom and free parking. It is not requirement-ready because the kitchen is shared, the exact address/commute is hidden, and two-dog approval and pet costs are unconfirmed.",
+    "verificationGaps": [
+      "Exact address and typical commute to 1400 8th Ave",
+      "Written approval for two small dogs",
+      "Pet deposit and monthly pet rent",
+      "Confirmed 3–6 month dates and maximum stay",
+      "Shared-kitchen rules and dedicated storage",
+      "Number of other occupants and shared-space rules",
+      "Application or screening fee",
+      "Exact parking space"
+    ],
+    "tags": [
+      "furnished room",
+      "private bathroom",
+      "utilities included",
+      "shared kitchen",
+      "pets advertised",
+      "two dogs unconfirmed",
+      "flexible monthly stay",
+      "free parking",
+      "commute confirmation"
+    ],
+    "history": [
+      {
+        "date": "2026-08-01",
+        "note": "Added after Furnished Finder showed a July 28 calendar update, current availability, $1,000 utilities-included price, private bathroom, free parking and generic pets-allowed language. Classified as shared-kitchen and two-dog-confirmation-required."
+      }
+    ]
   }
 ]

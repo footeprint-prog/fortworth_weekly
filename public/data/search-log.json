@@ -1,5 +1,17 @@
 [
   {
+    "id": "S-012",
+    "searchedAt": "2026-08-01T12:56:53-05:00",
+    "area": "South Fort Worth / Huguley / Burleson corridor",
+    "platform": "Furnished Finder + Zillow + Apartments.com + Craigslist + Facebook-style sublet leads + owner-direct web search",
+    "query": "Fresh Saturday furnished rooms, suites, ADUs, garage apartments, sublets and lease takeovers near $1,000 with dogs and a 20-minute commute to 1400 8th Ave",
+    "reviewed": 30,
+    "qualified": 1,
+    "outcome": "Found a newly updated $1,000 furnished private suite near Huguley with utilities, private bath, free parking and pets advertised. It remains a shared-kitchen fallback; two dogs, exact address/commute and 3–6 month dates require confirmation.",
+    "nextSearch": "Ask the Furnished Finder landlord to confirm exact location, both dogs, pet costs and 3–6 month dates; continue prioritizing private kitchens and direct-address inventory.",
+    "agent": "ChatGPT"
+  },
+  {
     "id": "S-011",
     "searchedAt": "2026-08-01T07:56:13-05:00",
     "area": "Cultural District / Arlington Heights / Medical District",

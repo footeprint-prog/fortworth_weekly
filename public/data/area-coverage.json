@@ -67,13 +67,16 @@
     "area": "Burleson",
     "priority": "medium",
     "commuteGoal": "25–40 min",
-    "status": "initial-pass",
+    "status": "monitoring",
     "platforms": [
-      "ApartmentHomeLiving"
+      "ApartmentHomeLiving",
+      "Furnished Finder",
+      "Zillow",
+      "Craigslist"
     ],
-    "lastSearch": "2026-07-16",
+    "lastSearch": "2026-08-01",
     "outlook": "possible",
-    "nextStep": "Search individual furnished complexes and private rentals."
+    "nextStep": "Verify L-029's exact address, both dogs, 3–6 month dates and shared-kitchen rules; continue searching private guest houses and ADUs within the 20-minute commute limit."
   },
   {
     "area": "Crowley",
