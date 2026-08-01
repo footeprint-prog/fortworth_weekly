@@ -1,5 +1,17 @@
 [
   {
+    "id": "S-010",
+    "searchedAt": "2026-07-31T21:58:01-05:00",
+    "area": "Medical District / Near Southside / 76104",
+    "platform": "Furnished Finder + Apartments.com + Zillow + Craigslist + owner-direct and sublet web search",
+    "query": "Late current-inventory verification for furnished studios, ADUs, sublets and short-term apartments near $1,000 within 20 minutes of 1400 8th Ave",
+    "reviewed": 29,
+    "qualified": 1,
+    "outcome": "No new requirement-ready unit surfaced. Current CoHo community terms materially changed L-020's classification by confirming a one-pet-per-unit limit, making it ineligible for Erica's two dogs; estimated monthly cost is $1,520 before parking.",
+    "nextSearch": "Prioritize genuinely two-dog-compatible private kitchens near $1,000 and avoid one-pet buildings unless a written exception is published.",
+    "agent": "ChatGPT"
+  },
+  {
     "id": "S-009",
     "searchedAt": "2026-07-31T13:02:10-05:00",
     "area": "Hulen / Southwest Fort Worth / Cityview",

@@ -140,3 +140,12 @@ The rental watch runs four times daily at approximately 8:00 a.m., 1:00 p.m., 6:
 - Restored dashboard loading after two unsupported lease-category aliases caused runtime validation to reject the complete lead database.
 - Normalized `L-024` from `3-6-month-confirmed` to `confirmed-3-6` and `L-026` from `12-month-only` to `12-plus`.
 - Preserved the underlying six-month and 12-month-only facts, notes, rejection status, stable IDs, source URLs, and full prior history.
+
+
+## July 31, 2026 late-night rental-watch update
+
+- Materially updated `L-020` after the current CoHo Apartments listing verified a one-pet-per-unit limit and a 40-pound maximum.
+- Reclassified CoHo from pet confirmation required to two-dog ineligible; Erica's two small dogs cannot both be housed under the published rule.
+- Preserved the confirmed three-month minimum, private full kitchen, furnishings, utilities, five-minute commute and stable Furnished Finder source.
+- Estimated the monthly total at $1,520 using $1,495 rent plus the Furnished Finder $25 monthly pet charge, before any parking cost.
+- Appended search log `S-010` and refreshed Medical District / Near Southside coverage.
