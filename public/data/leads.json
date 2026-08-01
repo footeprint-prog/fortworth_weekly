@@ -1283,19 +1283,19 @@
     "privacy": "entire-unit",
     "address": "312 W Terrell Ave, Fort Worth, TX 76104",
     "monthlyRent": 1495,
-    "mandatoryFeesMonthly": null,
+    "mandatoryFeesMonthly": 0,
     "utilitiesMonthly": 0,
     "utilitiesIncluded": true,
-    "petCostMonthly": null,
+    "petCostMonthly": 25,
     "petDeposit": 250,
     "parkingCostMonthly": null,
-    "estimatedAllIn": null,
+    "estimatedAllIn": 1520,
     "upfrontCosts": "$250 refundable deposit, $250 refundable pet deposit, and $100 cleaning fee.",
     "kitchen": "full",
     "kitchenDetails": "Private kitchen with granite counters, refrigerator, electric range, and dishwasher.",
     "furnished": true,
-    "petPolicy": "likely",
-    "petDetails": "Pets are allowed and a $250 refundable pet deposit is listed, but two-dog quantity and any recurring pet charge require confirmation.",
+    "petPolicy": "not-allowed",
+    "petDetails": "CoHo's current Apartments.com property listing allows cats or dogs but limits occupancy to one pet per unit with a 40-pound maximum. Erica's two dogs therefore cannot both be housed in this unit. Furnished Finder states an additional $25 monthly charge per pet.",
     "parking": "Gated parking is associated with the property; exact availability and cost for this furnished listing require confirmation.",
     "minStay": "3 months",
     "leaseTermMinMonths": 3,
@@ -1315,31 +1315,35 @@
     "sourceUrl": "https://www.furnishedfinder.com/property/721206_2",
     "contactVerified": true,
     "sourceVerified": true,
-    "lastChecked": "2026-07-30",
+    "lastChecked": "2026-07-31",
     "status": "market-benchmark",
-    "confidence": "medium",
+    "confidence": "high",
     "priority": "low",
-    "nextAction": "Retain as a structurally strong but over-budget benchmark; confirm only if budget flexibility increases.",
-    "notes": "Private furnished studio, full kitchen, utilities, and three-month minimum are confirmed, but the price is $345 above the stretch ceiling before any additional charge mentioned in truncated listing text.",
+    "nextAction": "Reject for Erica's current two-dog requirement; retain only as an over-budget furnished benchmark unless the property grants a written two-dog exception.",
+    "notes": "Private furnished studio, full kitchen, utilities and a three-month minimum are confirmed. Current community rules limit the unit to one pet, and the estimated $1,520 monthly total is $370 above the stretch ceiling before parking.",
     "verificationGaps": [
       "Current date-specific availability",
-      "Two-small-dog approval",
-      "Purpose of the listing's truncated additional $25 charge",
-      "Parking cost",
-      "Final all-in total"
+      "Whether management would grant a written two-dog exception",
+      "Parking availability and cost",
+      "Any additional mandatory monthly charges"
     ],
     "tags": [
       "furnished",
       "full kitchen",
       "three-month minimum",
-      "pets unclear",
       "over budget",
-      "medical district"
+      "medical district",
+      "one-pet maximum",
+      "two dogs ineligible"
     ],
     "history": [
       {
         "date": "2026-07-30",
         "note": "Added as an over-budget benchmark after reopening Furnished Finder property 721206_2."
+      },
+      {
+        "date": "2026-07-31",
+        "note": "Current Apartments.com community terms verified a one-pet-per-unit, 40-pound limit. Reclassified from pet confirmation required to two-dog ineligible and estimated $1,520 monthly including the Furnished Finder $25 pet charge."
       }
     ]
   },
